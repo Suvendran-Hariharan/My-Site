@@ -1,0 +1,359 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    scroll-behavior: smooth; /* Enable smooth scrolling for navigation links */
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-y: auto; /* Ensure body scrolls vertically */
+}
+
+/* Enable scroll snap */
+body {
+    scroll-snap-type: y mandatory; /* Vertical scroll snap */
+    overflow-y: scroll;
+    height: 100%;
+}
+
+/* Scroll Snap for specific sections */
+.hero-section,
+.filter-work-section,
+.about-section,
+.contact-section {
+    scroll-snap-align: start; /* Snap to the start (top) of each section */
+    min-height: 100vh; /* Full screen height */
+    padding: 60px 20px;
+}
+
+/* Bottom Sticky Navigation Bar */
+header {
+    position: fixed;
+    bottom: 70px; /* Move it 50px higher (was 20px before) */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Navigation Links */
+nav a {
+    text-decoration: none;
+    color: #333; /* Default link color */
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: transparent; /* Transparent background initially */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background and color changes */
+}
+
+/* Sticky Bottom Navigation Bar */
+header {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background-color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Navigation Links */
+nav a {
+    text-decoration: none;
+    color: #333; /* Default link color */
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: transparent; /* Transparent background initially */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Active link: Background black, text white for active section */
+nav a.active {
+    background-color: #000; /* Black background for active link */
+    color: #fff; /* White text for active link */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scroll Snap Sections */
+section {
+    scroll-snap-align: start;
+    min-height: 100vh; /* Full height for each section */
+    padding: 60px 20px;
+}
+
+
+
+/* Hero Section */
+.hero-section {
+    height: 100vh; /* Full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px 60px;
+}
+
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    line-height: 1.2;
+}
+
+.hero-text p {
+    font-size: 1.4rem;
+    margin-top: 20px;
+}
+
+.hero-image {
+    max-width: 30%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0.85;
+    transition: transform 0.3s ease;
+}
+
+/* Filter Section */
+.filter-work-section {
+    min-height: 100vh; /* Full screen height for the filter section */
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    padding: 20px;
+    background-color: white;
+    scroll-snap-align: start; /* Ensure snap alignment */
+}
+
+.filter-section {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.filters button {
+    background: none;
+    color: #333;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.filters button.active {
+    opacity: 1;
+}
+
+.filters button:hover {
+    opacity: 0.75;
+}
+
+/* Project Grid */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 0 40px;
+    width: 100%;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out; /* Smooth fade for project updates */
+}
+
+/* Fading out the project grid when updating */
+.project-grid.fade-out {
+    opacity: 0;
+}
+
+.project-tile {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-tile img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    aspect-ratio: 16 / 9;
+    transition: transform 0.3s ease;
+}
+
+.project-tile:hover img {
+    transform: scale(1.05);
+}
+
+.project-description {
+    font-size: 1rem;
+    margin-top: 10px;
+    padding: 0 10px;
+    text-align: left;
+    display: block;
+    color: #333;
+    line-height: 1.4;
+}
+
+/* About Section */
+.about-section {
+    padding: 50px 120px;
+    min-height: 100vh; /* Full screen height for about section */
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    background-color: #ffffff;
+    scroll-snap-align: start; /* Ensure snap alignment */
+}
+
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.about-left {
+    flex: 1;
+}
+
+.about h2 { 
+    text-align: center;
+}
+
+.about-left h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.about-left ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.about-left ul li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.about-left ul li span {
+    float: right;
+    color: gray;
+    font-size: 0.9rem;
+}
+
+.about-right {
+    flex: 2;
+    max-width: 600px;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.about-right p {
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+.contact-section {
+    min-height: 100vh; /* Full screen height for the contact section */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    padding: 50px 120px;
+    scroll-snap-align: start; /* Ensure snap alignment */
+}
+
+.contact-content {
+    margin: 50px 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-links button {
+    padding: 10px 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.social-links button:hover {
+    background-color: #f0f0f0;
+}
+
+/* Footer Section */
+.footer-section {
+    padding: 20px;
+    text-align: left;
+    background-color: #ffffff;
+    font-size: 0.9rem;
+    color: gray;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .project-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-content, .contact-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .filters button {
+        padding: 5px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content, .contact-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links {
+        flex-direction: column;
+    }
+}
