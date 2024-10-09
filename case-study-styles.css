@@ -1,0 +1,171 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Apply Inter font to the whole site */
+html, body {
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Header Section */
+.header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ccc;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.header h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.header p {
+    font-size: 1.2rem;
+}
+
+/* Image Section */
+.image-section {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.image-section img.main-image {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-section .image-caption {
+    margin-top: 10px;
+    font-style: italic;
+    color: #777;
+}
+
+/* Content Section */
+.content-section {
+    padding: 20px 5vw;
+    text-align: center;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.content-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.content-section p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Footer Sticky Navigation Bar */
+.footer {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    background-color: #ffffff;
+    padding: 3px; /* Reduced padding */
+    border-radius: 50px; /* Smooth rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    z-index: 150; /* Keep it on top of other content */
+    height: 50px; /* Reduced height */
+    width: auto; /* Adjust according to content */
+}
+
+/* Navigation Links */
+.project-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Space between links */
+}
+
+.project-nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 20px; /* Reduced padding */
+    border-radius: 50px; /* Round buttons */
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; /* Ensure text doesn't wrap */
+}
+
+.project-nav a:hover {
+    background-color: #f0f0f0;
+}
+
+.project-nav a.active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    .header h2 {
+        font-size: 2.5rem;
+    }
+
+    .content-section h2 {
+        font-size: 1.8rem;
+    }
+
+    .footer {
+        padding: 3px;
+        height: 45px; /* Reduced height for smaller screens */
+        width: auto; /* Ensure the footer doesn't stretch */
+    }
+
+    .project-nav a {
+        font-size: 0.9rem;
+        padding: 7px 15px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3px;
+        height: 40px; /* Reduced height */
+        width: auto; /* Ensure the footer doesn't stretch */
+    }
+
+    .project-nav a {
+        font-size: 0.8rem;
+        padding: 5px 10px; /* Further reduced padding */
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 3px;
+        height: 35px; /* Smaller height for mobile */
+    }
+
+    .project-nav a {
+        font-size: 0.7rem;
+        padding: 4px 8px; /* Reduced padding to fit text in one line */
+        white-space: nowrap; /* Ensure text stays on one line */
+    }
+}

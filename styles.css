@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 
-/* Apply Inter font to the whole site */
 html, body {
     height: 100%;
     font-family: 'Inter', sans-serif;
@@ -14,27 +13,26 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Set consistent padding and content width */
 body {
-    padding: 0; /* Remove side padding */
+    padding: 0;
 }
 
 /* Scroll Snap only for desktop (min-width 1024px) */
 @media (min-width: 1024px) {
     body {
-        scroll-snap-type: y mandatory; /* Vertical scroll snap */
+        scroll-snap-type: y mandatory;
         overflow-y: scroll;
     }
     section {
         scroll-snap-align: start;
-        min-height: 100vh; /* Full height for each section */
-        padding: 60px 5vw; /* Apply consistent padding to section */
+        min-height: 100vh;
+        padding: 60px 5vw;
     }
 }
 
 /* Sticky Alert - hidden by default on all screens */
 .sticky-alert {
-    display: none; /* Hidden by default */
+    display: none;
     background-color: #ffcc00;
     color: #333;
     font-size: 0.9rem;
@@ -46,7 +44,7 @@ body {
     right: 0;
     z-index: 200;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    display: flex; /* Flexbox for aligning text and close button */
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -64,13 +62,12 @@ body {
 }
 
 .sticky-alert .close-btn:hover {
-    color: #000; /* Darker color on hover */
+    color: #000;
 }
 
-/* Show alert only on mobile devices (max-width: 767px) */
 @media (max-width: 767px) {
     .sticky-alert {
-        display: flex; /* Visible only on mobile screens */
+        display: flex;
     }
 }
 
@@ -79,7 +76,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 80px 5vw;
+    padding: 60px 5vw;
     background-color: #fff;
     min-height: 100vh;
 }
@@ -94,6 +91,7 @@ body {
 
 .hero-text {
     max-width: 50%;
+    text-align: left;
 }
 
 .hero-text h1 {
@@ -113,41 +111,80 @@ body {
 
 .portfolio-text {
     font-size: 1.1rem;
-    margin-top: 60px;
+    margin-top: 40px;
     margin-bottom: 0;
 }
 
-/* Hero Image - Normal Image */
+/* Hero Image */
 .hero-image-container {
-    position: relative; /* Ensure proper stacking for hover effect */
-    max-width: 40%; /* Adjusted size */
+    position: relative;
+    max-width: 40%;
 }
 
 .hero-image {
     width: 100%;
     display: block;
-    transition: opacity 0.3s ease;
 }
 
-/* Hover Image (Initially hidden) */
-.hover-image {
+/* Hover Image */
+.hero-image-container .hover-image {
     position: absolute;
     top: 0;
     left: 0;
-    opacity: 0; /* Hidden initially */
-    transition: opacity 0.3s ease; /* Smooth transition */
-    z-index: 1; /* Ensure hover image appears on top */
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
-/* Show hover image and hide normal image when hovering */
 .hero-image-container:hover .hover-image {
-    opacity: 1; /* Make hover image visible */
+    opacity: 1;
 }
 
 .hero-image-container:hover .normal-image {
-    opacity: 0; /* Hide normal image */
+    opacity: 0;
 }
 
+/* Mobile-specific styles for the hero section */
+@media (max-width: 767px) {
+    .hero-section {
+        padding: 30px 5vw;
+    }
+
+    .hero-content {
+        flex-direction: column-reverse;  /* Stack text below the image */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-image-container {
+        max-width: 70%; /* Image takes 70% width */
+        margin-bottom: 20px; /* Add space below the image */
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-top: 10px;  /* Add space above the text */
+    }
+
+    .hero-text h1 {
+        font-size: 2.2rem; /* Adjust font size for mobile */
+        margin-bottom: 10px;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+    }
+
+    .portfolio-text {
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+
+    .long-text {
+        display: none;
+    }
+}
 
 /* Bottom Sticky Navigation Bar */
 header {
@@ -163,39 +200,21 @@ header {
     display: flex;
     justify-content: center;
     gap: 30px;
-    width: calc(100% - 10vw); /* Ensure navigation fits within the screen */
+    width: calc(100% - 10vw);
 }
 
-/* Navigation bar */
-header {
-    position: fixed;
-    bottom: 20px;
-    left: 50%; /* Center the navigation bar */
-    transform: translateX(-50%); /* Center horizontally */
-    background-color: #ffffff;
-    padding: 5px; /* Equal padding all around */
-    border-radius: 50px; /* Ensure smooth, round corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    width: auto; /* Let the width adjust according to content */
-    z-index: 150;
-}
-
-/* Center navigation items and add gap between links */
 nav {
     display: flex;
     justify-content: center;
-    gap: 10px; /* Ensure even space between the buttons */
+    gap: 10px;
 }
 
-/* Navigation links */
 nav a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    padding: 7px 25px; /* Button size: adjust as needed */
-    border-radius: 50px; /* Round buttons */
+    padding: 7px 25px;
+    border-radius: 50px;
     background-color: transparent;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -209,8 +228,7 @@ nav a.active {
     color: #fff;
 }
 
-
-/* Adjust navigation text for smaller screens (max-width 768px) */
+/* Responsive Navigation */
 @media (max-width: 768px) {
     nav a {
         font-size: 0.9rem;
@@ -227,13 +245,13 @@ nav a.active {
 
 /* Filter Section */
 .filter-work-section {
-    min-height: 100vh; /* Full screen height for the filter section */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: top;
-    padding: 50px; /* Remove side padding */
+    padding: 50px;
     background-color: white;
-    scroll-snap-align: start; /* Ensure snap alignment */
+    scroll-snap-align: start;
 }
 
 .filter-section {
@@ -261,14 +279,13 @@ nav a.active {
     opacity: 0.75;
 }
 
-/* Sticky Filter Section for Tablet Devices (max-width 1024px) */
 @media (max-width: 1024px) {
     .filter-section {
         position: sticky;
         top: 0;
         width: 100%;
         left: 0;
-        background-color: white; /* Keep background */
+        background-color: white;
         z-index: 100;
         padding: 15px 0;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -278,15 +295,14 @@ nav a.active {
 /* Project Grid */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensure tiles fit edge to edge */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    padding: 20px 00px; /* Remove padding */
+    padding: 20px 00px;
     width: 100%;
     opacity: 1;
-    transition: opacity 0.5s ease-in-out; /* Smooth fade for project updates */
+    transition: opacity 0.5s ease-in-out;
 }
 
-/* Fading out the project grid when updating */
 .project-grid.fade-out {
     opacity: 0;
 }
@@ -330,10 +346,10 @@ nav a.active {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1.5fr 1fr; /* Two-column layout */
-    gap: 50px; /* Space between columns */
+    grid-template-columns: 1.5fr 1fr;
+    gap: 50px;
     width: 100%;
-    max-width: 1200px; /* Set maximum width to keep content centered */
+    max-width: 1200px;
 }
 
 .about-left h3 {
@@ -370,7 +386,6 @@ nav a.active {
     color: gray;
 }
 
-/* Divider between experiences */
 .experience-divider {
     border: none;
     border-top: 1px solid #ccc;
@@ -383,7 +398,6 @@ nav a.active {
     max-width: 600px;
 }
 
-/* Media Queries for Responsiveness */
 @media (max-width: 1024px) {
     .about-content {
         grid-template-columns: 1fr;
@@ -422,7 +436,7 @@ nav a.active {
     flex-direction: column;
     justify-content: center;
     padding: 50px 5vw;
-    min-height: 100vh; /* Full-screen height */
+    min-height: 100vh;
 }
 
 .contact-section h2 {
@@ -437,7 +451,7 @@ nav a.active {
 }
 
 .email {
-    font-size: 3rem; /* Large font size for email */
+    font-size: 3rem;
     font-weight: bold;
     color: #333;
     margin-bottom: 40px;
@@ -450,23 +464,22 @@ nav a.active {
 }
 
 .social-icon {
-    width: 40px; /* Set appropriate size for icons */
+    width: 40px;
     height: 40px;
     transition: transform 0.3s ease;
 }
 
 .social-icon:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
+    transform: scale(1.1);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .email {
-        font-size: 2.2rem; /* Adjust font size for smaller screens */
+        font-size: 2.2rem;
     }
 
     .social-links {
-        gap: 20px; /* Reduce gap between icons */
+        gap: 20px;
     }
 
     .social-icon {
@@ -486,26 +499,24 @@ nav a.active {
 
 /* Email Section */
 .email {
-    font-size: 1.5rem; /* Default size for larger screens */
+    font-size: 1.5rem;
     text-align: center;
     padding: 10px;
     font-weight: bold;
 }
 
-/* Adjust email size for smaller screens (max-width 767px) */
 @media (max-width: 767px) {
     .email {
-        font-size: 1rem; /* Smaller font size for small screens */
-        padding: 5px; /* Reduce padding to save space */
-        word-break: break-word; /* Ensures long email addresses break to the next line if necessary */
+        font-size: 1rem;
+        padding: 5px;
+        word-break: break-word;
     }
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
     .project-grid {
         grid-template-columns: 1fr 1fr;
-        padding: 0; /* Remove padding for edge-to-edge display */
+        padding: 0;
     }
 
     .about-content, .contact-content {
@@ -521,11 +532,11 @@ nav a.active {
 @media (max-width: 768px) {
     .project-grid {
         grid-template-columns: 1fr;
-        padding: 0; /* Remove padding for edge-to-edge display */
+        padding: 0;
     }
 
     .project-tile img {
-        width: 100%; /* Ensure the images fit to the width */
+        width: 100%;
     }
 
     .social-links {
