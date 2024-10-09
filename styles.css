@@ -5,116 +5,91 @@
     box-sizing: border-box;
 }
 
+/* Apply Inter font to the whole site */
 html, body {
     height: 100%;
-    scroll-behavior: smooth; /* Enable smooth scrolling for navigation links */
-    font-family: 'Arial', sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #333;
     line-height: 1.6;
-    overflow-y: auto; /* Ensure body scrolls vertically */
+    overflow-x: hidden;
 }
 
-/* Enable scroll snap */
+/* Set consistent padding and content width */
 body {
-    scroll-snap-type: y mandatory; /* Vertical scroll snap */
-    overflow-y: scroll;
-    height: 100%;
+    padding: 0; /* Remove side padding */
 }
 
-/* Scroll Snap for specific sections */
-.hero-section,
-.filter-work-section,
-.about-section,
-.contact-section {
-    scroll-snap-align: start; /* Snap to the start (top) of each section */
-    min-height: 100vh; /* Full screen height */
-    padding: 60px 20px;
+/* Scroll Snap only for desktop (min-width 1024px) */
+@media (min-width: 1024px) {
+    body {
+        scroll-snap-type: y mandatory; /* Vertical scroll snap */
+        overflow-y: scroll;
+    }
+    section {
+        scroll-snap-align: start;
+        min-height: 100vh; /* Full height for each section */
+        padding: 60px 5vw; /* Apply consistent padding to section */
+    }
 }
 
-/* Bottom Sticky Navigation Bar */
-header {
+/* Sticky Alert - hidden by default on all screens */
+.sticky-alert {
+    display: none; /* Hidden by default */
+    background-color: #ffcc00;
+    color: #333;
+    font-size: 0.9rem;
+    padding: 10px;
+    text-align: center;
     position: fixed;
-    bottom: 70px; /* Move it 50px higher (was 20px before) */
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex; /* Flexbox for aligning text and close button */
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Navigation Links */
-nav a {
-    text-decoration: none;
-    color: #333; /* Default link color */
+/* Close button inside the alert */
+.sticky-alert .close-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.2rem;
     font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: transparent; /* Transparent background initially */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth background and color changes */
+    color: #333;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
 
-/* Sticky Bottom Navigation Bar */
-header {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
-    background-color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+.sticky-alert .close-btn:hover {
+    color: #000; /* Darker color on hover */
 }
 
-/* Navigation Links */
-nav a {
-    text-decoration: none;
-    color: #333; /* Default link color */
-    font-weight: bold;
-    padding: 10px 20px;
-    border-radius: 20px;
-    background-color: transparent; /* Transparent background initially */
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* Show alert only on mobile devices (max-width: 767px) */
+@media (max-width: 767px) {
+    .sticky-alert {
+        display: flex; /* Visible only on mobile screens */
+    }
 }
-
-/* Hover effect for navigation links */
-nav a:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-/* Active link: Background black, text white for active section */
-nav a.active {
-    background-color: #000; /* Black background for active link */
-    color: #fff; /* White text for active link */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Scroll Snap Sections */
-section {
-    scroll-snap-align: start;
-    min-height: 100vh; /* Full height for each section */
-    padding: 60px 20px;
-}
-
-
 
 /* Hero Section */
 .hero-section {
-    height: 100vh; /* Full screen height */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
-    padding: 20px 60px;
+    padding: 80px 5vw;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .hero-text {
@@ -124,24 +99,130 @@ section {
 .hero-text h1 {
     font-size: 4rem;
     line-height: 1.2;
+    margin-bottom: 20px;
 }
 
 .hero-text p {
     font-size: 1.4rem;
-    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.long-text {
+    display: inline;
+}
+
+.portfolio-text {
+    font-size: 1.1rem;
+    margin-top: 60px;
+    margin-bottom: 0;
+}
+
+/* Hero Image - Normal Image */
+.hero-image-container {
+    position: relative; /* Ensure proper stacking for hover effect */
+    max-width: 40%; /* Adjusted size */
 }
 
 .hero-image {
-    max-width: 30%;
+    width: 100%;
+    display: block;
+    transition: opacity 0.3s ease;
 }
 
-.hero-image img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-    opacity: 0.85;
-    transition: transform 0.3s ease;
+/* Hover Image (Initially hidden) */
+.hover-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0; /* Hidden initially */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    z-index: 1; /* Ensure hover image appears on top */
+}
+
+/* Show hover image and hide normal image when hovering */
+.hero-image-container:hover .hover-image {
+    opacity: 1; /* Make hover image visible */
+}
+
+.hero-image-container:hover .normal-image {
+    opacity: 0; /* Hide normal image */
+}
+
+
+/* Bottom Sticky Navigation Bar */
+header {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background-color: #f9f9f9;
+    padding: 10px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: calc(100% - 10vw); /* Ensure navigation fits within the screen */
+}
+
+/* Navigation bar */
+header {
+    position: fixed;
+    bottom: 20px;
+    left: 50%; /* Center the navigation bar */
+    transform: translateX(-50%); /* Center horizontally */
+    background-color: #ffffff;
+    padding: 5px; /* Equal padding all around */
+    border-radius: 50px; /* Ensure smooth, round corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    width: auto; /* Let the width adjust according to content */
+    z-index: 150;
+}
+
+/* Center navigation items and add gap between links */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Ensure even space between the buttons */
+}
+
+/* Navigation links */
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 7px 25px; /* Button size: adjust as needed */
+    border-radius: 50px; /* Round buttons */
+    background-color: transparent;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #f0f0f0;
+}
+
+nav a.active {
+    background-color: #000;
+    color: #fff;
+}
+
+
+/* Adjust navigation text for smaller screens (max-width 768px) */
+@media (max-width: 768px) {
+    nav a {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav a {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
 }
 
 /* Filter Section */
@@ -150,7 +231,7 @@ section {
     display: flex;
     flex-direction: column;
     justify-content: top;
-    padding: 20px;
+    padding: 50px; /* Remove side padding */
     background-color: white;
     scroll-snap-align: start; /* Ensure snap alignment */
 }
@@ -180,12 +261,26 @@ section {
     opacity: 0.75;
 }
 
+/* Sticky Filter Section for Tablet Devices (max-width 1024px) */
+@media (max-width: 1024px) {
+    .filter-section {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        left: 0;
+        background-color: white; /* Keep background */
+        z-index: 100;
+        padding: 15px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}
+
 /* Project Grid */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ensure tiles fit edge to edge */
     gap: 20px;
-    padding: 0 40px;
+    padding: 20px 00px; /* Remove padding */
     width: 100%;
     opacity: 1;
     transition: opacity 0.5s ease-in-out; /* Smooth fade for project updates */
@@ -226,111 +321,191 @@ section {
 
 /* About Section */
 .about-section {
-    padding: 50px 120px;
-    min-height: 100vh; /* Full screen height for about section */
+    padding: 50px 5vw;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
-    justify-content: top;
-    background-color: #ffffff;
-    scroll-snap-align: start; /* Ensure snap alignment */
+    justify-content: center;
+    background-color: #fff;
 }
 
 .about-content {
-    display: flex;
-    justify-content: space-between;
-    gap: 80px;
-}
-
-.about-left {
-    flex: 1;
-}
-
-.about h2 { 
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Two-column layout */
+    gap: 50px; /* Space between columns */
+    width: 100%;
+    max-width: 1200px; /* Set maximum width to keep content centered */
 }
 
 .about-left h3 {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     font-weight: bold;
-    margin-bottom: 15px;
-}
-
-.about-left ul {
-    list-style: none;
-    padding: 0;
     margin-bottom: 30px;
 }
 
-.about-left ul li {
-    font-size: 1rem;
-    margin-bottom: 10px;
+/* Experience List */
+.experience-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-.about-left ul li span {
-    float: right;
-    color: gray;
+.experience-list li {
+    margin-bottom: 25px;
+}
+
+.job-title {
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.company-info {
+    font-size: 1rem;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.job-dates {
     font-size: 0.9rem;
+    color: gray;
 }
 
-.about-right {
-    flex: 2;
-    max-width: 600px;
-    font-size: 1rem;
-    line-height: 1.6;
+/* Divider between experiences */
+.experience-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 15px 0;
 }
 
 .about-right p {
-    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 600px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .job-title {
+        font-size: 1rem;
+    }
+
+    .company-info {
+        font-size: 0.9rem;
+    }
+
+    .job-dates {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-right p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
 }
 
 /* Contact Section */
 .contact-section {
-    min-height: 100vh; /* Full screen height for the contact section */
     text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: top;
-    padding: 50px 120px;
-    scroll-snap-align: start; /* Ensure snap alignment */
+    justify-content: center;
+    padding: 50px 5vw;
+    min-height: 100vh; /* Full-screen height */
 }
 
-.contact-content {
-    margin: 50px 0;
+.contact-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-text {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.email {
+    font-size: 3rem; /* Large font size for email */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 30px;
 }
 
-.social-links button {
-    padding: 10px 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background-color 0.3s;
+.social-icon {
+    width: 40px; /* Set appropriate size for icons */
+    height: 40px;
+    transition: transform 0.3s ease;
 }
 
-.social-links button:hover {
-    background-color: #f0f0f0;
+.social-icon:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .email {
+        font-size: 2.2rem; /* Adjust font size for smaller screens */
+    }
+
+    .social-links {
+        gap: 20px; /* Reduce gap between icons */
+    }
+
+    .social-icon {
+        width: 30px;
+        height: 30px;
+    }
 }
 
 /* Footer Section */
 .footer-section {
-    padding: 20px;
+    padding: 20px 5vw;
     text-align: left;
     background-color: #ffffff;
     font-size: 0.9rem;
     color: gray;
 }
 
+/* Email Section */
+.email {
+    font-size: 1.5rem; /* Default size for larger screens */
+    text-align: center;
+    padding: 10px;
+    font-weight: bold;
+}
+
+/* Adjust email size for smaller screens (max-width 767px) */
+@media (max-width: 767px) {
+    .email {
+        font-size: 1rem; /* Smaller font size for small screens */
+        padding: 5px; /* Reduce padding to save space */
+        word-break: break-word; /* Ensures long email addresses break to the next line if necessary */
+    }
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .project-grid {
         grid-template-columns: 1fr 1fr;
+        padding: 0; /* Remove padding for edge-to-edge display */
     }
 
     .about-content, .contact-content {
@@ -344,13 +519,13 @@ section {
 }
 
 @media (max-width: 768px) {
-    .about-content, .contact-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
     .project-grid {
         grid-template-columns: 1fr;
+        padding: 0; /* Remove padding for edge-to-edge display */
+    }
+
+    .project-tile img {
+        width: 100%; /* Ensure the images fit to the width */
     }
 
     .social-links {

@@ -1,13 +1,61 @@
-// Sample project data for each category with 6 to 7 projects
+// Sample project data for each category with case study links
 const projectTemplates = {
     'recent': [
-        { description: 'Website redesign for a modern e-commerce platform.', image: 'project1.jpg' },
-        { description: 'Mobile app development for a food delivery startup.', image: 'project2.jpg' },
-        { description: 'Landing page for a product launch campaign.', image: 'project3.jpg' },
-        { description: 'Responsive redesign for a personal portfolio website.', image: 'project4.jpg' },
-        { description: 'Custom WordPress theme for a travel blog.', image: 'project5.jpg' },
-        { description: 'Interactive dashboard for a financial services app.', image: 'project6.jpg' },
-        { description: 'UX/UI improvements for a healthcare app.', image: 'project7.jpg' }
+        { description: 'Website redesign for a modern e-commerce platform.', image: 'project1.jpg', link: 'case-study1.html' },
+        { description: 'Mobile app development for a food delivery startup.', image: 'project2.jpg', link: 'case-study2.html' },
+        { description: 'Landing page for a product launch campaign.', image: 'project3.jpg', link: 'case-study3.html' },
+        { description: 'Responsive redesign for a personal portfolio website.', image: 'project4.jpg', link: 'case-study4.html' },
+        { description: 'Custom WordPress theme for a travel blog.', image: 'project5.jpg', link: 'case-study5.html' },
+        { description: 'Interactive dashboard for a financial services app.', image: 'project6.jpg', link: 'case-study6.html' }
+    ],
+    'brand-identity': [
+        { description: 'Brand identity for a local coffee shop.', image: 'project1.jpg', link: 'case-study1.html' },
+        { description: 'Complete rebranding for a tech startup.', image: 'project2.jpg', link: 'case-study2.html' },
+        { description: 'Logo and visual identity for a sports team.', image: 'project3.jpg', link: 'case-study3.html' },
+        { description: 'New identity for a corporate law firm.', image: 'project4.jpg', link: 'case-study4.html' },
+        { description: 'Rebranding for a luxury fashion brand.', image: 'project5.jpg', link: 'case-study5.html' }
+    ],
+    'book-cover': [
+        { description: 'Book cover design for a sci-fi novel.', image: 'project1.jpg', link: 'case-study1.html' },
+        { description: 'Cover for a children’s educational book.', image: 'project2.jpg', link: 'case-study2.html' },
+        { description: 'Redesign of a classic literature cover.', image: 'project3.jpg', link: 'case-study3.html' },
+        { description: 'Book cover for a self-help author.', image: 'project4.jpg', link: 'case-study4.html' },
+        { description: 'Artistic cover for a poetry collection.', image: 'project5.jpg', link: 'case-study5.html' }
+    ],
+    'campaigns': [
+        { description: 'Campaign for a sustainable fashion brand.', image: 'project1.jpg', link: 'case-study1.html' },
+        { description: 'Digital campaign for a fintech app.', image: 'project2.jpg', link: 'case-study2.html' },
+        { description: 'Social media campaign for an NGO.', image: 'project3.jpg', link: 'case-study3.html' },
+        { description: 'Integrated ad campaign for a tech product.', image: 'project4.jpg', link: 'case-study4.html' },
+        { description: 'Event-based marketing campaign for a festival.', image: 'project5.jpg', link: 'case-study5.html' }
+    ],
+    'events': [
+        { description: 'Event branding for a tech conference.', image: 'project1.jpg', link: 'case-study1.html' },
+        { description: 'Design for a music festival stage and banners.', image: 'project2.jpg', link: 'case-study2.html' },
+        { description: 'Invitations and marketing for a corporate gala.', image: 'project3.jpg', link: 'case-study3.html' },
+        { description: 'Event branding for a wedding expo.', image: 'project4.jpg', link: 'case-study4.html' },
+        { description: 'Promotional materials for a charity auction.', image: 'project5.jpg', link: 'case-study5.html' }
+    ],
+    'digital': [
+        { description: 'Website design for a fintech startup.', image: 'project1.jpg', link: 'case-study1.html' },
+        { description: 'Mobile app UI for a fitness tracking app.', image: 'project2.jpg', link: 'case-study2.html' },
+        { description: 'Dashboard design for an enterprise software.', image: 'project3.jpg', link: 'case-study3.html' },
+        { description: 'Website for a digital artist portfolio.', image: 'project4.jpg', link: 'case-study4.html' },
+        { description: 'E-commerce platform for a retail clothing store.', image: 'project5.jpg', link: 'case-study5.html' }
+    ],
+    'package-design': [
+        { description: 'Packaging design for a new snack product.', image: 'project1.jpg', link: 'case-study1.html' },
+        { description: 'Eco-friendly packaging for a beauty brand.', image: 'project2.jpg', link: 'case-study2.html' },
+        { description: 'Creative packaging for a holiday gift set.', image: 'project3.jpg', link: 'case-study3.html' },
+        { description: 'Minimalist package design for a skincare line.', image: 'project4.jpg', link: 'case-study4.html' },
+        { description: 'Packaging for a local brewery’s beer.', image: 'project5.jpg', link: 'case-study5.html' }
+    ],
+    'interior-design': [
+        { description: 'Interior design for a modern coworking space.', image: 'project1.jpg', link: 'case-study1.html' },
+        { description: 'Office space redesign for a tech company.', image: 'project2.jpg', link: 'case-study2.html' },
+        { description: 'Home renovation with a minimalist theme.', image: 'project3.jpg', link: 'case-study3.html' },
+        { description: 'Design for a boutique hotel interior.', image: 'project4.jpg', link: 'case-study4.html' },
+        { description: 'Luxury apartment design in the city.', image: 'project5.jpg', link: 'case-study5.html' }
     ]
 };
 
@@ -15,10 +63,10 @@ const projectTemplates = {
 function filterProjects(category) {
     const projectGrid = document.getElementById('projectGrid');
     
-    projectGrid.classList.add('fade-out');
+    projectGrid.classList.add('fade-out'); // Add fade-out class
 
     setTimeout(() => {
-        projectGrid.innerHTML = '';
+        projectGrid.innerHTML = ''; // Clear previous projects
 
         const selectedProjects = projectTemplates[category];
         if (!selectedProjects || selectedProjects.length === 0) {
@@ -28,28 +76,50 @@ function filterProjects(category) {
                 const projectTile = document.createElement('div');
                 projectTile.classList.add('project-tile');
                 projectTile.innerHTML = `
-                    <img src="${project.image}" alt="Project Image" loading="lazy">
-                    <div class="project-description">
-                        <p>${project.description}</p>
-                    </div>
+                    <a href="${project.link}">
+                        <img src="${project.image}" alt="Project Image" loading="lazy">
+                        <div class="project-description">
+                            <p>${project.description}</p>
+                        </div>
+                    </a>
                 `;
                 projectGrid.appendChild(projectTile);
             });
         }
 
-        projectGrid.classList.remove('fade-out');
+        projectGrid.classList.remove('fade-out'); // Remove fade-out class after update
     }, 500);
 
+    // Update active filter button
     document.querySelectorAll('.filters button').forEach(button => button.classList.remove('active'));
     document.querySelector(`button[onclick="filterProjects('${category}')"]`).classList.add('active');
 }
 
+// Trigger functions on page load
 window.onload = function() {
-    filterProjects('recent');
-    updateGridLayout();
-    updateLocalTime();
-    applyFirstScrollEffect();
-    handleScroll();
+    filterProjects('recent'); // Load recent projects by default
+    updateGridLayout(); // Adjust grid layout based on screen size
+    updateLocalTime(); // Set local time in the footer
+    applyFirstScrollEffect(); // Apply smooth scroll effect on first scroll
+    handleScroll(); // Update navigation active link on scroll
+    handleAlert(); // Handle the display of the sticky alert on mobile
+}
+
+// Function to dismiss the sticky alert
+function dismissAlert() {
+    document.querySelector('.sticky-alert').style.display = 'none';
+}
+
+// Function to handle the sticky alert display based on screen size
+function handleAlert() {
+    const alertElement = document.querySelector('.sticky-alert');
+    const screenWidth = window.innerWidth;
+    
+    if (screenWidth <= 767) {
+        alertElement.style.display = 'flex'; // Show alert on mobile devices
+    } else {
+        alertElement.style.display = 'none'; // Hide alert on larger screens
+    }
 }
 
 // Update local time in the footer
@@ -60,23 +130,30 @@ function updateLocalTime() {
     localTimeElement.textContent = now.toLocaleTimeString([], options);
 }
 
+// Update local time every minute
 setInterval(updateLocalTime, 60000);
 
+// Adjust project grid layout based on screen size
 function updateGridLayout() {
     const screenWidth = window.innerWidth;
     const projectGrid = document.getElementById('projectGrid');
     
     if (screenWidth < 768) {
-        projectGrid.style.gridTemplateColumns = '1fr';
+        projectGrid.style.gridTemplateColumns = '1fr'; // One column for small screens
     } else if (screenWidth < 1024) {
-        projectGrid.style.gridTemplateColumns = '1fr 1fr';
+        projectGrid.style.gridTemplateColumns = '1fr 1fr'; // Two columns for tablets
     } else {
-        projectGrid.style.gridTemplateColumns = 'repeat(4, 1fr)';
+        projectGrid.style.gridTemplateColumns = 'repeat(4, 1fr)'; // Four columns for larger screens
     }
 }
 
-window.addEventListener('resize', updateGridLayout);
+// Listen to window resize and update grid layout and alert visibility
+window.addEventListener('resize', () => {
+    updateGridLayout();
+    handleAlert(); // Also handle alert visibility on resize
+});
 
+// Trigger smooth scroll to the work section on the first scroll
 let hasScrolled = false;
 function applyFirstScrollEffect() {
     window.addEventListener('scroll', function () {
@@ -87,27 +164,71 @@ function applyFirstScrollEffect() {
     });
 }
 
+// Handle scroll to update active navigation links
 function handleScroll() {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
 
     const observerOptions = {
         root: null,
-        threshold: 0.5
+        threshold: 0.5 // Trigger when 50% of the section is in view
     };
+
+    let activeSectionId = ''; // Track the active section
 
     const observerCallback = (entries) => {
         entries.forEach(entry => {
-            const sectionId = entry.target.getAttribute('id');
-            const navLink = document.querySelector(`nav a[href="#${sectionId}"]`);
-
             if (entry.isIntersecting) {
-                navLinks.forEach(link => link.classList.remove('active'));
-                navLink.classList.add('active');
+                activeSectionId = entry.target.getAttribute('id'); // Set the active section
+            }
+        });
+
+        // Update the active link in the navigation
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${activeSectionId}`) {
+                link.classList.add('active');
             }
         });
     };
 
+    // Create an observer to watch section visibility
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    sections.forEach(section => observer.observe(section));
+    sections.forEach(section => observer.observe(section)); // Observe each section
+}
+
+// Function to display projects for the selected category
+function filterProjects(category) {
+    const projectGrid = document.getElementById('projectGrid');
+    
+    projectGrid.classList.add('fade-out'); // Add fade-out class
+
+    setTimeout(() => {
+        projectGrid.innerHTML = ''; // Clear previous projects
+
+        const selectedProjects = projectTemplates[category];
+        if (!selectedProjects || selectedProjects.length === 0) {
+            projectGrid.innerHTML = '<p>No projects available for this category.</p>';
+        } else {
+            selectedProjects.forEach(project => {
+                const projectTile = document.createElement('div');
+                projectTile.classList.add('project-tile');
+                projectTile.innerHTML = `
+                    <a href="${project.link}" target="_blank" rel="noopener noreferrer">
+                        <img src="${project.image}" alt="Project Image" loading="lazy">
+                        <div class="project-description">
+                            <p>${project.description}</p>
+                        </div>
+                    </a>
+                `;
+                projectGrid.appendChild(projectTile);
+            });
+        }
+
+        projectGrid.classList.remove('fade-out'); // Remove fade-out class after update
+    }, 500);
+
+    // Update active filter button
+    document.querySelectorAll('.filters button').forEach(button => button.classList.remove('active'));
+    document.querySelector(`button[onclick="filterProjects('${category}')"]`).classList.add('active');
 }
