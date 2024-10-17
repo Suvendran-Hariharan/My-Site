@@ -17,6 +17,10 @@ body {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}  
+
 /* Scroll Snap only for desktop (min-width 1024px) */
 @media (min-width: 1024px) {
     body {

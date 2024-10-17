@@ -1,26 +1,26 @@
 // Sample project data for each category with case study links
 const projectTemplates = {
     'recent': [
-        { description: 'Website redesign for a modern e-commerce platform.', image: 'project1.jpg', link: 'case-study1.html' },
-        { description: 'Mobile app development for a food delivery startup.', image: 'project2.jpg', link: 'case-study2.html' },
-        { description: 'Landing page for a product launch campaign.', image: 'project3.jpg', link: 'case-study3.html' },
-        { description: 'Responsive redesign for a personal portfolio website.', image: 'project4.jpg', link: 'case-study4.html' },
+        { description: 'Italian tradition and wood-fired essence in bold design', image: 'Christiano_thumb.jpg', link: 'case-study1.html' },
+        { description: 'Elegant branding for luxury custom gold and diamond jewellers.', image: 'Pramila Jewellers Mood Board-08-min.jpg', link: 'case-study2.html' },
+        { description: 'Futuristic figure entering a portal, representing visionary leadership.', image: 'Time Travaller_Thumbnail-min.jpg', link: 'print_casestudy_2.html' },
+        { description: 'Hands assembling gears, symbolizing <br> 30 years of unity.', image: '30 years of LMD-min.jpg', link: 'print_casestudy_1.html' },
         { description: 'Custom WordPress theme for a travel blog.', image: 'project5.jpg', link: 'case-study5.html' },
-        { description: 'Interactive dashboard for a financial services app.', image: 'project6.jpg', link: 'case-study6.html' }
+        { description: 'Employees collaborating, illustrating a dynamic workspace culture.', image: 'LMD_GPTW_Thumbnail-min.jpg', link: 'print_casestudy_4.html' },
     ],
     'brand-identity': [
-        { description: 'Brand identity for a local coffee shop.', image: 'project1.jpg', link: 'case-study1.html' },
-        { description: 'Complete rebranding for a tech startup.', image: 'project2.jpg', link: 'case-study2.html' },
+        { description: 'Italian tradition and wood-fired essence in bold design', image: 'Christiano_thumb.jpg', link: 'case-study1.html' },
+        { description: 'Elegant branding for luxury custom gold and diamond jewellers.', image: 'Pramila Jewellers Mood Board-08-min.jpg', link: 'case-study2.html' },
         { description: 'Logo and visual identity for a sports team.', image: 'project3.jpg', link: 'case-study3.html' },
         { description: 'New identity for a corporate law firm.', image: 'project4.jpg', link: 'case-study4.html' },
         { description: 'Rebranding for a luxury fashion brand.', image: 'project5.jpg', link: 'case-study5.html' }
     ],
-    'book-cover': [
-        { description: 'Book cover design for a sci-fi novel.', image: 'project1.jpg', link: 'case-study1.html' },
-        { description: 'Cover for a children’s educational book.', image: 'project2.jpg', link: 'case-study2.html' },
-        { description: 'Redesign of a classic literature cover.', image: 'project3.jpg', link: 'case-study3.html' },
-        { description: 'Book cover for a self-help author.', image: 'project4.jpg', link: 'case-study4.html' },
-        { description: 'Artistic cover for a poetry collection.', image: 'project5.jpg', link: 'case-study5.html' }
+    'print': [
+        { description: 'Hands assembling gears, symbolizing <br> 30 years of unity.', image: '30 years of LMD-min.jpg', link: 'print_casestudy_1.html' },
+        { description: 'Futuristic figure entering a portal, representing visionary leadership.', image: 'Time Travaller_Thumbnail-min.jpg', link: 'print_casestudy_2.html' },
+        { description: 'LMD trophy atop red stairs, symbolizing respect and achievement.', image: 'LMD_MR_Thumbnail-min.jpg', link: 'print_casestudy_3.html' },
+        { description: 'Employees collaborating, illustrating a dynamic workspace culture.', image: 'LMD_GPTW_Thumbnail-min.jpg', link: 'print_casestudy_4.html' },
+        { description: 'Ocean-themed brochure for a coastal apartment project.', image: 'The Wonder_Thumbnail-min.jpg', link: 'print_casestudy_5.html' }
     ],
     'campaigns': [
         { description: 'Campaign for a sustainable fashion brand.', image: 'project1.jpg', link: 'case-study1.html' },
