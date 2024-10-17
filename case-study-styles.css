@@ -5,53 +5,56 @@
     box-sizing: border-box;
 }
 
-/* Apply Inter font to the whole site */
 html, body {
-    height: 100%;
     font-family: 'Inter', sans-serif;
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
-/* Header Section */
+/* Header Styles */
 .header {
     text-align: center;
-    padding: 50px 20px;
+    padding: 20px 5vw; /* Reduce padding */
     background-color: #ffffff;
-    border-bottom: 2px solid #ccc;
+    max-width: 70%; /* Align the header text width to image */
+    margin: 0 auto; /* Center the header content */
 }
 
 .header h1 {
-    font-size: 2rem;
+    font-size: 1.2rem; /* Reduced font size for 'Brand Identity' */
     margin-bottom: 10px;
+    color: #777;
 }
 
 .header h2 {
-    font-size: 3rem;
+    font-size: 1.8rem; /* Slightly reduce the size for subtitle */
     margin-bottom: 20px;
+    color: #333;
 }
 
 .header p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    color: #555;
 }
 
 /* Image Section */
 .image-section {
     text-align: center;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .image-section img.main-image {
-    max-width: 100%;
+    max-width: 70%;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Remove the image caption */
 .image-section .image-caption {
-    margin-top: 10px;
-    font-style: italic;
-    color: #777;
+    display: none; /* Hide 'The Logo' text */
 }
 
 /* Content Section */
@@ -64,53 +67,81 @@ html, body {
 }
 
 .content-section h2 {
-    font-size: 2rem;
+    font-size: 1.2rem;
     margin-bottom: 10px;
     color: #333;
 }
 
 .content-section p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #555;
+    max-height: 4.5em;
+    overflow: hidden;
+    position: relative;
+    transition: max-height 0.3s ease;
 }
 
-/* Footer Sticky Navigation Bar */
+.content-section p.expanded {
+    max-height: none;
+}
+
+.read-more-link {
+    display: inline;
+    color: #007BFF;
+    cursor: pointer;
+    font-size: inherit;
+    line-height: inherit;
+    white-space: nowrap;
+    vertical-align: baseline;
+    word-spacing: 0;
+}
+
+/* Footer (Sticky Navigation) */
 .footer {
     position: fixed;
     bottom: 20px;
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    transform: translateX(-50%);
     background-color: #ffffff;
-    padding: 3px; /* Reduced padding */
-    border-radius: 50px; /* Smooth rounded corners */
+    padding: 3px;
+    border-radius: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
-    z-index: 150; /* Keep it on top of other content */
-    height: 50px; /* Reduced height */
-    width: auto; /* Adjust according to content */
+    z-index: 150;
+    height: 50px;
 }
 
-/* Navigation Links */
 .project-nav {
     display: flex;
     justify-content: center;
-    gap: 15px; /* Space between links */
+    gap: 15px;
+    white-space: nowrap;
 }
 
 .project-nav a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
-    padding: 8px 20px; /* Reduced padding */
-    border-radius: 50px; /* Round buttons */
+    padding: 8px 20px;
+    border-radius: 50px;
     background-color: transparent;
+    display: flex;
+    align-items: center; /* Align icons and text vertically */
     transition: background-color 0.3s ease, color 0.3s ease;
-    white-space: nowrap; /* Ensure text doesn't wrap */
 }
 
+.project-nav a img.arrow-icon {
+    width: 8px; /* Reduce the size of the arrows to 50% */
+    height: auto;
+    margin-right: 8px; /* Space for the left arrow */
+    margin-left: 8px;  /* Space for the right arrow */
+}
+
+/* Hover Effect */
 .project-nav a:hover {
-    background-color: #f0f0f0;
+    background-color: #000; /* Change background to black */
+    color: #fff; /* Change text color to white */
 }
 
 .project-nav a.active {
@@ -119,53 +150,82 @@ html, body {
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
-    .header h1 {
-        font-size: 1.8rem;
-    }
-    .header h2 {
-        font-size: 2.5rem;
-    }
-
-    .content-section h2 {
-        font-size: 1.8rem;
-    }
-
-    .footer {
-        padding: 3px;
-        height: 45px; /* Reduced height for smaller screens */
-        width: auto; /* Ensure the footer doesn't stretch */
-    }
-
-    .project-nav a {
-        font-size: 0.9rem;
-        padding: 7px 15px; /* Adjust padding for smaller screens */
-    }
-}
-
 @media (max-width: 768px) {
+    .header {
+        max-width: 100%; /* Ensure full width for small screens */
+        padding: 20px 10px;
+    }
+
+    .header h1 {
+        font-size: 1rem; /* Smaller font for mobile */
+    }
+
+    .header h2 {
+        font-size: 1.4rem; /* Reduce the subtitle on mobile */
+    }
+
+    .header p {
+        font-size: 0.85rem;
+    }
+
+    .image-section img.main-image {
+        max-width: 100%;
+        border-radius: 0px;
+    }
+
     .footer {
-        padding: 3px;
-        height: 40px; /* Reduced height */
-        width: auto; /* Ensure the footer doesn't stretch */
+        height: 40px;
     }
 
     .project-nav a {
         font-size: 0.8rem;
-        padding: 5px 10px; /* Further reduced padding */
-        white-space: nowrap; /* Prevent text wrapping */
+        padding: 5px 10px;
+    }
+
+    .project-nav a img.arrow-icon {
+        width: 7px; /* Adjust icon size for mobile */
     }
 }
 
 @media (max-width: 480px) {
+    .header {
+        padding: 15px 10px;
+    }
+
+    .header h1 {
+        font-size: 1rem;
+    }
+
+    .header h2 {
+        font-size: 1.4rem;
+    }
+
+    .header p {
+        font-size: 0.75rem;
+    }
+
+    .content-section h2 {
+        font-size: 0.8rem;
+    }
+
+    .content-section p {
+        font-size: 0.8rem;
+    }
+
+    .image-section img.main-image {
+        max-width: 100%;
+    }
+
     .footer {
-        padding: 3px;
-        height: 35px; /* Smaller height for mobile */
+        height: 35px;
     }
 
     .project-nav a {
         font-size: 0.7rem;
-        padding: 4px 8px; /* Reduced padding to fit text in one line */
-        white-space: nowrap; /* Ensure text stays on one line */
+        padding: 4px 8px;
+    }
+
+    .project-nav a img.arrow-icon {
+        width: 6px; /* Further adjust icon size for small screens */
     }
 }
