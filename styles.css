@@ -277,6 +277,8 @@ nav a.active {
 
 .filters button.active {
     opacity: 1;
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 .filters button:hover {
@@ -331,12 +333,25 @@ nav a.active {
 
 .project-description {
     font-size: 1rem;
-    margin-top: 10px;
-    padding: 0 10px;
+    margin-top: 2px;
+    padding: 0px 0px 5px 0px;
     text-align: left;
     display: block;
     color: #333;
     line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    /* Filter Section Padding for Mobile */
+    .filter-work-section {
+        width: 100%;
+        padding: 5vw;
+    }
+
+    /* Project Grid Padding for Mobile */
+    .project-grid {
+        padding: 5vw;
+    }
 }
 
 /* About Section */
@@ -344,22 +359,33 @@ nav a.active {
     padding: 50px 5vw;
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Stack the "About" heading on top */
+    align-items: center; /* Center items for larger screens */
     background-color: #fff;
 }
 
+/* Center "About" Heading by default */
+.about-section h2 {
+    font-size: 1.5rem; /* Make the heading larger for better visibility */
+    text-align: center; /* Center the text by default */
+    margin-bottom: 30px; /* Space below the heading */
+    width: 100%; /* Ensure the heading spans the full width */
+}
+
+/* Content Layout */
 .about-content {
     display: grid;
-    grid-template-columns: 1.5fr 1fr;
+    grid-template-columns: 1.5fr 2fr;
     gap: 50px;
     width: 100%;
     max-width: 1200px;
 }
 
+/* Experience Heading Styling */
 .about-left h3 {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1rem;
     margin-bottom: 30px;
+    color: gray;
 }
 
 /* Experience List */
@@ -382,7 +408,7 @@ nav a.active {
 .company-info {
     font-size: 1rem;
     font-weight: normal;
-    margin-bottom: 5px;
+    margin-bottom: 2px; /* Reduced margin for closer spacing */
 }
 
 .job-dates {
@@ -396,16 +422,51 @@ nav a.active {
     margin: 15px 0;
 }
 
-.about-right p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 600px;
+/* Styling for Highlighted Text (Quote) */
+.about-right p:first-of-type {
+    font-family: 'Cursive', 'Georgia', 'Times New Roman', serif; /* Fallback fonts */
+    font-size: 1.5rem; /* Larger font for emphasis */
+    font-style: italic; /* Make the font italic to mimic the style */
+    font-weight: normal; /* Use normal weight for a cursive look */
+    line-height: 1.6;
+    margin-bottom: 20px; /* Space after the first paragraph */
+    color: #000; /* Change to black or a preferred color */
+    padding-left: 0; /* Remove left padding */
+    border-left: none; /* Remove the vertical line */
+    text-align: left; /* Left align the quote */
 }
 
+/* General Paragraph Styling */
+.about-right p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    max-width: 600px;
+    margin-bottom: 15px; /* Increased spacing for better readability */
+}
+
+/* Medium Bold Styling for Specific Text */
+.about-right .medium-bold {
+    font-weight: 600; /* Set to 500 for medium boldness */
+}
+
+/* Responsive Adjustments */
 @media (max-width: 1024px) {
     .about-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack sections vertically */
         gap: 30px;
+    }
+
+    .about-section h2 {
+        text-align: left; /* Align the "About" heading to the left on smaller screens */
+    }
+
+    .about-right p:first-of-type {
+        font-size: 1.2rem; /* Adjust size for smaller screens */
+        line-height: 1.6;
+    }
+
+    .about-right p {
+        font-size: 1rem;
     }
 
     .job-title {
@@ -423,53 +484,77 @@ nav a.active {
 
 @media (max-width: 768px) {
     .about-content {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column; /* Stack the sections vertically */
         gap: 20px;
     }
 
+    .about-right {
+        order: 1; /* Show the right section first */
+    }
+
+    .about-left {
+        order: 2; /* Show the left section after */
+    }
+
+    .about-right p:first-of-type {
+        font-size: 1.1rem; /* Adjust font size for smaller screens */
+        line-height: 1.5;
+    }
+
     .about-right p {
-        font-size: 1rem;
-        line-height: 1.6;
+        font-size: 0.95rem;
+        line-height: 1.4;
     }
 }
 
 /* Contact Section */
 .contact-section {
-    text-align: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    padding: 50px 5vw;
+    padding: 50px 5vw; /* Keep padding as 5vw */
     min-height: 100vh;
+    text-align: center; /* Center align by default */
 }
 
-.contact-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-}
-
+/* Contact Heading */
 .contact-text {
     font-size: 1rem;
     margin-bottom: 20px;
     color: #333;
+    text-align: left; /* Align left for larger screens */
+    width: 100%;
+    max-width: 1000px; /* Limit the width on desktop */
+    margin-left: 5vw; /* Align with the About text */
 }
 
+/* Email Section */
 .email {
-    font-size: 3rem;
+    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive scaling */
     font-weight: bold;
-    color: #333;
-    margin-bottom: 40px;
+    text-align: center; /* Center align */
+    width: calc(100% - 10vw); /* Make it fit within the screen width */
+    white-space: normal; /* Allow wrapping if needed */
+    line-height: 1.5;
+    margin: 20px 0;
 }
 
+/* Social Links */
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 30px;
+    justify-content: center; /* Center align for desktop */
+    align-items: center;
+    gap: clamp(15px, 2vw, 30px); /* Responsive gap */
+    margin-top: 20px;
+    flex-wrap: nowrap; /* Keep icons in one row */
 }
 
+/* Social Icon */
 .social-icon {
-    width: 40px;
-    height: 40px;
+    width: clamp(35px, 6vw, 60px); /* Responsive scaling */
+    height: auto; /* Maintain aspect ratio */
     transition: transform 0.3s ease;
 }
 
@@ -477,18 +562,48 @@ nav a.active {
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+/* Desktop-Specific Styles */
+@media (min-width: 1024px) {
+    .contact-text {
+        text-align: left; /* Align left on desktop */
+        margin-left: 5vw; /* Align with About text */
+    }
     .email {
-        font-size: 2.2rem;
+        font-size: 2.5rem; /* Larger font for desktops */
+        width: calc(100% - 10vw); /* Ensure it fits within the screen */
+        text-align: center;
+    }
+    .social-links {
+        justify-content: center; /* Center align on desktop */
+    }
+}
+
+/* Mobile-Specific Styles */
+@media (max-width: 768px) {
+    .contact-section {
+        align-items: flex-start; /* Align items to the left on mobile */
+    }
+
+    .contact-text {
+        text-align: left;
+        padding-left: 10px; /* Add padding for better readability */
+    }
+
+    .email {
+        font-size: 1.2rem; /* Ensure the email fits the mobile screen */
+        text-align: left;
+        width: 100%; /* Full width on mobile */
+        padding-left: 10px;
     }
 
     .social-links {
-        gap: 20px;
+        justify-content: flex-start; /* Align to the left on mobile */
+        flex-wrap: nowrap; /* Keep in a single row */
+        gap: 10px; /* Smaller gap for mobile */
     }
 
     .social-icon {
-        width: 30px;
-        height: 30px;
+        width: 30px; /* Smaller icon size for mobile */
     }
 }
 
@@ -501,18 +616,10 @@ nav a.active {
     color: gray;
 }
 
-/* Email Section */
-.email {
-    font-size: 1.5rem;
-    text-align: center;
-    padding: 10px;
-    font-weight: bold;
-}
 
 @media (max-width: 767px) {
     .email {
-        font-size: 1rem;
-        padding: 5px;
+        font-size: 20rem;
         word-break: break-word;
     }
 }

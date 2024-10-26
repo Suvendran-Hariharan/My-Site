@@ -5,13 +5,13 @@ const projectTemplates = {
         { description: 'Elegant branding for luxury custom gold and diamond jewellers.', image: 'Pramila Jewellers Mood Board-08-min.jpg', link: 'case-study2.html' },
         { description: 'Futuristic figure entering a portal, representing visionary leadership.', image: 'Time Travaller_Thumbnail-min.jpg', link: 'print_casestudy_2.html' },
         { description: 'Hands assembling gears, symbolizing <br> 30 years of unity.', image: '30 years of LMD-min.jpg', link: 'print_casestudy_1.html' },
-        { description: 'Custom WordPress theme for a travel blog.', image: 'project5.jpg', link: 'case-study5.html' },
+        { description: 'Professional Logo and Brand Guidelines Development for "Book for you" Visual Identity.', image: 'Book for you Mood Board 1-08-min.jpg', link: 'case-study3.html' },
         { description: 'Employees collaborating, illustrating a dynamic workspace culture.', image: 'LMD_GPTW_Thumbnail-min.jpg', link: 'print_casestudy_4.html' },
     ],
     'brand-identity': [
         { description: 'Italian tradition and wood-fired essence in bold design', image: 'Christiano_thumb.jpg', link: 'case-study1.html' },
         { description: 'Elegant branding for luxury custom gold and diamond jewellers.', image: 'Pramila Jewellers Mood Board-08-min.jpg', link: 'case-study2.html' },
-        { description: 'Logo and visual identity for a sports team.', image: 'project3.jpg', link: 'case-study3.html' },
+        { description: 'Professional Logo and Brand Guidelines Development for "Book for you" Visual Identity.', image: 'Book for you Mood Board 1-08-min.jpg', link: 'case-study3.html' },
         { description: 'New identity for a corporate law firm.', image: 'project4.jpg', link: 'case-study4.html' },
         { description: 'Rebranding for a luxury fashion brand.', image: 'project5.jpg', link: 'case-study5.html' }
     ],
@@ -214,7 +214,7 @@ function filterProjects(category) {
                 const projectTile = document.createElement('div');
                 projectTile.classList.add('project-tile');
                 projectTile.innerHTML = `
-                    <a href="${project.link}" target="_blank" rel="noopener noreferrer">
+                    <a href="${project.link}" rel="noopener noreferrer">
                         <img src="${project.image}" alt="Project Image" loading="lazy">
                         <div class="project-description">
                             <p>${project.description}</p>
@@ -232,3 +232,44 @@ function filterProjects(category) {
     document.querySelectorAll('.filters button').forEach(button => button.classList.remove('active'));
     document.querySelector(`button[onclick="filterProjects('${category}')"]`).classList.add('active');
 }
+
+// Function to auto-scroll to the 'Work' section if the URL contains 'scrollTo=work'
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const scrollToSection = urlParams.get('scrollTo');
+
+    if (scrollToSection === 'work') {
+        const workSection = document.getElementById('work-section');
+        if (workSection) {
+            setTimeout(function() {
+                workSection.scrollIntoView({ behavior: 'smooth' });
+            }, 500);  // Delay to ensure full page load before scrolling
+        }
+    }
+});
+
+function adjustFontSize() {
+    const emailElement = document.querySelector('.email');
+    const socialIcons = document.querySelectorAll('.social-icon');
+    const viewportWidth = window.innerWidth;
+
+    if (viewportWidth < 768) {
+        emailElement.style.fontSize = '1.2rem';
+        socialIcons.forEach(icon => {
+            icon.style.width = '30px';
+        });
+    } else if (viewportWidth < 1024) {
+        emailElement.style.fontSize = '1.6rem';
+        socialIcons.forEach(icon => {
+            icon.style.width = '40px';
+        });
+    } else {
+        emailElement.style.fontSize = '2.5rem';
+        socialIcons.forEach(icon => {
+            icon.style.width = '50px';
+        });
+    }
+}
+
+window.addEventListener('load', adjustFontSize);
+window.addEventListener('resize', adjustFontSize);
