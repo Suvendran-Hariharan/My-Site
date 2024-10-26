@@ -34,3 +34,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+// Function to auto-scroll to the 'Work' section if the URL contains 'scrollTo=work'
+document.addEventListener('DOMContentLoaded', function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const scrollToSection = urlParams.get('scrollTo');
+
+    if (scrollToSection === 'work') {
+        const workSection = document.getElementById('work-section');
+        if (workSection) {
+            setTimeout(function() {
+                workSection.scrollIntoView({ behavior: 'smooth' });
+            }, 500);  // Delay to ensure full page load before scrolling
+        }
+    }
+});
+

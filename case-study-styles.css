@@ -129,13 +129,9 @@ html, body {
     display: flex;
     align-items: center; /* Align icons and text vertically */
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.project-nav a img.arrow-icon {
-    width: 8px; /* Reduce the size of the arrows to 50% */
-    height: auto;
-    margin-right: 8px; /* Space for the left arrow */
-    margin-left: 8px;  /* Space for the right arrow */
+    justify-content: center; /* Ensure text stays centered */
+    width: 120px; /* Set a fixed width for all buttons */
+    text-align: center; /* Center text inside the button */
 }
 
 /* Hover Effect */
@@ -148,6 +144,32 @@ html, body {
     background-color: #000;
     color: #fff;
 }
+
+.project-nav a.work-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 50px;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover Effect for Work link */
+.project-nav a.work-link:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.project-nav a img.arrow-icon {
+    width: 8px; /* Reduce the size of the arrows to 50% */
+    height: auto;
+    margin-right: 8px; /* Space for the left arrow */
+    margin-left: 8px;  /* Space for the right arrow */
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
