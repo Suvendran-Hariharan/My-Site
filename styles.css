@@ -424,7 +424,7 @@ nav a.active {
 
 /* Styling for Highlighted Text (Quote) */
 .about-right p:first-of-type {
-    font-family: 'Cursive', 'Georgia', 'Times New Roman', serif; /* Fallback fonts */
+    font-family: 'Cursive', 'georgiai', 'Georgia', 'Times New Roman', serif; /* Fallback fonts */
     font-size: 1.5rem; /* Larger font for emphasis */
     font-style: italic; /* Make the font italic to mimic the style */
     font-weight: normal; /* Use normal weight for a cursive look */

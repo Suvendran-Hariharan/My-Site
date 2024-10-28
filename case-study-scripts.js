@@ -50,3 +50,28 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+document.addEventListener('DOMContentLoaded', function () {
+        // Function to center the gallery based on the screen width
+        function centerGallery() {
+            const gallery = document.querySelector('.gallery');
+            const viewportWidth = window.innerWidth;
+            const galleryWidth = gallery.offsetWidth;
+
+            // Only set margin if the viewport is wider than the gallery
+            if (viewportWidth > galleryWidth) {
+                gallery.style.marginLeft = 'auto';
+                gallery.style.marginRight = 'auto';
+            } else {
+                gallery.style.marginLeft = '0';
+                gallery.style.marginRight = '0';
+            }
+        }
+
+        // Initial call to center the gallery
+        centerGallery();
+
+        // Re-center the gallery on window resize
+        window.addEventListener('resize', centerGallery);
+    });
+
+
