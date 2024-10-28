@@ -1,26 +1,25 @@
 // Sample project data for each category with case study links
 const projectTemplates = {
     'recent': [
-        { description: 'Italian tradition and wood-fired essence in bold design', image: 'Christiano_thumb.jpg', link: 'case-study1.html' },
-        { description: 'Elegant branding for luxury custom gold and diamond jewellers.', image: 'Pramila Jewellers Mood Board-08-min.jpg', link: 'case-study2.html' },
-        { description: 'Futuristic figure entering a portal, representing visionary leadership.', image: 'Time Travaller_Thumbnail-min.jpg', link: 'print_casestudy_2.html' },
-        { description: 'Hands assembling gears, symbolizing <br> 30 years of unity.', image: '30 years of LMD-min.jpg', link: 'print_casestudy_1.html' },
-        { description: 'Professional Logo and Brand Guidelines Development for "Book for you" Visual Identity.', image: 'Book for you Mood Board 1-08-min.jpg', link: 'case-study3.html' },
-        { description: 'Employees collaborating, illustrating a dynamic workspace culture.', image: 'LMD_GPTW_Thumbnail-min.jpg', link: 'print_casestudy_4.html' },
+        { description: '<b>Christianos Pizza:</b> Italian tradition and wood-fired essence in bold design', image: 'Christiano_thumb.jpg', link: 'case-study1.html' },
+        { description: '<b>Pramila Jewellers:</b> Elegant branding for luxury custom gold and diamond jewellers.', image: 'Pramila Jewellers Mood Board-08-min.jpg', link: 'case-study2.html' },
+        { description: '<b>Inqube:</b> Futuristic figure entering a portal, representing visionary leadership.', image: 'Time Travaller_Thumbnail-min.jpg', link: 'print_casestudy_2.html' },
+        { description: '<b>LMD:</b> Hands assembling gears, symbolizing <br> 30 years of unity.', image: '30 years of LMD-min.jpg', link: 'print_casestudy_1.html' },
+        { description: '<b>Book For You:</b> Professional Logo and Brand Guidelines Development for "Book for you" Visual Identity.', image: 'Book for you Mood Board 1-08-min.jpg', link: 'case-study3.html' },
+        { description: '<b>LMD:</b> Employees collaborating, illustrating a dynamic workspace culture.', image: 'LMD_GPTW_Thumbnail-min.jpg', link: 'print_casestudy_4.html' },
     ],
     'brand-identity': [
-        { description: 'Italian tradition and wood-fired essence in bold design', image: 'Christiano_thumb.jpg', link: 'case-study1.html' },
-        { description: 'Elegant branding for luxury custom gold and diamond jewellers.', image: 'Pramila Jewellers Mood Board-08-min.jpg', link: 'case-study2.html' },
-        { description: 'Professional Logo and Brand Guidelines Development for "Book for you" Visual Identity.', image: 'Book for you Mood Board 1-08-min.jpg', link: 'case-study3.html' },
-        { description: 'New identity for a corporate law firm.', image: 'project4.jpg', link: 'case-study4.html' },
-        { description: 'Rebranding for a luxury fashion brand.', image: 'project5.jpg', link: 'case-study5.html' }
+        { description: '<b>Christianos Pizza:</b> Italian tradition and wood-fired essence in bold design', image: 'Christiano_thumb.jpg', link: 'case-study1.html' },
+        { description: '<b>Pramila Jewellers:</b> Elegant branding for luxury custom gold and diamond jewellers.', image: 'Pramila Jewellers Mood Board-08-min.jpg', link: 'case-study2.html' },
+        { description: '<b>Book For You:</b> Professional Logo and Brand Guidelines Development for "Book for you" Visual Identity.', image: 'Book for you Mood Board 1-08-min.jpg', link: 'case-study3.html' },
     ],
     'print': [
-        { description: 'Hands assembling gears, symbolizing <br> 30 years of unity.', image: '30 years of LMD-min.jpg', link: 'print_casestudy_1.html' },
-        { description: 'Futuristic figure entering a portal, representing visionary leadership.', image: 'Time Travaller_Thumbnail-min.jpg', link: 'print_casestudy_2.html' },
-        { description: 'LMD trophy atop red stairs, symbolizing respect and achievement.', image: 'LMD_MR_Thumbnail-min.jpg', link: 'print_casestudy_3.html' },
-        { description: 'Employees collaborating, illustrating a dynamic workspace culture.', image: 'LMD_GPTW_Thumbnail-min.jpg', link: 'print_casestudy_4.html' },
-        { description: 'Ocean-themed brochure for a coastal apartment project.', image: 'The Wonder_Thumbnail-min.jpg', link: 'print_casestudy_5.html' }
+        { description: '<b>LMD:</b> Hands assembling gears, symbolizing <br> 30 years of unity.', image: '30 years of LMD-min.jpg', link: 'print_casestudy_1.html' },
+        { description: '<b>Inqube:</b> Futuristic figure entering a portal, representing visionary leadership.', image: 'Time Travaller_Thumbnail-min.jpg', link: 'print_casestudy_2.html' },
+        { description: '<b>LMD:</b> Trophy atop red stairs, symbolizing respect and achievement.', image: 'LMD_MR_Thumbnail-min.jpg', link: 'print_casestudy_3.html' },
+        { description: '<b>LMD:</b> Employees collaborating, illustrating a dynamic workspace culture.', image: 'LMD_GPTW_Thumbnail-min.jpg', link: 'print_casestudy_4.html' },
+        { description: '<b>Wonder:</b> Ocean-themed brochure for a coastal apartment project.', image: 'The Wonder_Thumbnail-min.jpg', link: 'print_casestudy_5.html' },
+        { description: '<b>OSC:</b> Illustrative Basketball Court Banner - Home of the Geckos', image: 'OSC Mood Board-03-min.jpg', link: 'print_casestudy_6.html' }
     ],
     'campaigns': [
         { description: 'Campaign for a sustainable fashion brand.', image: 'project1.jpg', link: 'case-study1.html' },
@@ -37,13 +36,12 @@ const projectTemplates = {
         { description: 'Promotional materials for a charity auction.', image: 'project5.jpg', link: 'case-study5.html' }
     ],
     'digital': [
-        { description: 'Website design for a fintech startup.', image: 'project1.jpg', link: 'case-study1.html' },
-        { description: 'Mobile app UI for a fitness tracking app.', image: 'project2.jpg', link: 'case-study2.html' },
-        { description: 'Dashboard design for an enterprise software.', image: 'project3.jpg', link: 'case-study3.html' },
-        { description: 'Website for a digital artist portfolio.', image: 'project4.jpg', link: 'case-study4.html' },
-        { description: 'E-commerce platform for a retail clothing store.', image: 'project5.jpg', link: 'case-study5.html' }
+        { description: '<b>Land Rover:</b> Social media strategy tailored to Sri Lankan holidays and cultural moments.', image: 'Digital Mood Board-02-min.jpg', link: 'Digital_case-study1.html' },
+        { description: '<b>Jaguar:</b> Global strategy highlighting luxury, performance, and innovation.', image: 'Digital Mood Board-06-min.jpg', link: 'Digital_case-study2.html' },
+        { description: '<b>Bela Beauty College:</b>Transforming Online Presence Together', image: 'Belabeauty_01.jpg', link: 'Digital_case-study3.html' },
+        { description: '<b>Fancy Foods:</b> Boosting Social media Reach by 13.5% and Engagement by 4.2%', image: 'Fancyfoods_1.jpg', link: 'Digital_case-study4.html' },
     ],
-    'package-design': [
+    'UI/UX': [
         { description: 'Packaging design for a new snack product.', image: 'project1.jpg', link: 'case-study1.html' },
         { description: 'Eco-friendly packaging for a beauty brand.', image: 'project2.jpg', link: 'case-study2.html' },
         { description: 'Creative packaging for a holiday gift set.', image: 'project3.jpg', link: 'case-study3.html' },
@@ -105,10 +103,48 @@ window.onload = function() {
     handleAlert(); // Handle the display of the sticky alert on mobile
 }
 
-// Function to dismiss the sticky alert
-function dismissAlert() {
-    document.querySelector('.sticky-alert').style.display = 'none';
-}
+document.addEventListener('DOMContentLoaded', function () {
+    console.log("DOM fully loaded and parsed");
+    const paragraphs = document.querySelectorAll('.content-section p');
+
+    paragraphs.forEach(paragraph => {
+        console.log("Processing paragraph:", paragraph.innerText);
+        const originalText = paragraph.innerText;
+        const maxVisibleCharacters = 150; // Set character limit for truncation
+
+        if (originalText.length > maxVisibleCharacters) {
+            const truncatedText = originalText.substring(0, maxVisibleCharacters) + '...';
+            paragraph.innerText = truncatedText;
+
+            const readMoreLink = document.createElement('span');
+            readMoreLink.classList.add('read-more-link');
+            readMoreLink.innerText = ' Read More';
+
+            paragraph.appendChild(readMoreLink);
+
+            // Function to toggle text visibility
+            function toggleText() {
+                if (paragraph.classList.contains('expanded')) {
+                    paragraph.innerText = truncatedText;
+                    paragraph.appendChild(readMoreLink);
+                    readMoreLink.innerText = ' Read More';
+                    paragraph.classList.remove('expanded');
+                } else {
+                    paragraph.innerText = originalText;
+                    paragraph.appendChild(readMoreLink);
+                    readMoreLink.innerText = ' Show Less';
+                    paragraph.classList.add('expanded');
+                }
+            }
+
+            // Add event listeners for click and touchstart
+            readMoreLink.addEventListener('click', toggleText);
+            readMoreLink.addEventListener('touchstart', toggleText); // For touch devices
+        }
+    });
+});
+
+
 
 // Function to handle the sticky alert display based on screen size
 function handleAlert() {
