@@ -1,39 +1,29 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const paragraphs = document.querySelectorAll('.content-section p');
 
     paragraphs.forEach(paragraph => {
         const originalText = paragraph.innerText;
-        const maxVisibleCharacters = 150; // Set character limit for truncation
+        const maxVisibleCharacters = 150;
 
         if (originalText.length > maxVisibleCharacters) {
             const truncatedText = originalText.substring(0, maxVisibleCharacters) + '...';
-            paragraph.innerText = truncatedText;
+            paragraph.innerHTML = truncatedText;
 
-            // Create 'Read More' link and append it directly inside the paragraph text
+            // Create 'Read More' link
             const readMoreLink = document.createElement('span');
             readMoreLink.classList.add('read-more-link');
-            readMoreLink.innerText = ' Read More';  // Add a space before "Read More"
-
-            // Append 'Read More' inside the paragraph without breaking the line
+            readMoreLink.innerText = ' Read More';
             paragraph.appendChild(readMoreLink);
 
-            // Toggle functionality
+            // Toggle CSS class only for visibility
             readMoreLink.addEventListener('click', () => {
-                if (paragraph.classList.contains('expanded')) {
-                    paragraph.innerText = truncatedText;
-                    paragraph.appendChild(readMoreLink);  // Re-append the 'Read More' link
-                    readMoreLink.innerText = ' Read More';
-                    paragraph.classList.remove('expanded');
-                } else {
-                    paragraph.innerText = originalText;
-                    paragraph.appendChild(readMoreLink);  // Keep 'Show Less' in paragraph
-                    readMoreLink.innerText = ' Show Less';
-                    paragraph.classList.add('expanded');
-                }
+                paragraph.classList.toggle('expanded');
+                readMoreLink.innerText = paragraph.classList.contains('expanded') ? ' Show Less' : ' Read More';
             });
         }
     });
 });
+
 
 // Function to auto-scroll to the 'Work' section if the URL contains 'scrollTo=work'
 document.addEventListener('DOMContentLoaded', function () {

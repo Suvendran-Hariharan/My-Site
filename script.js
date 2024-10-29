@@ -2,16 +2,19 @@
 const projectTemplates = {
     'recent': [
         { description: '<b>Christianos Pizza:</b> Italian tradition and wood-fired essence in bold design', image: 'Christiano_thumb.jpg', link: 'case-study1.html' },
-        { description: '<b>Pramila Jewellers:</b> Elegant branding for luxury custom gold and diamond jewellers.', image: 'Pramila Jewellers Mood Board-08-min.jpg', link: 'case-study2.html' },
-        { description: '<b>Inqube:</b> Futuristic figure entering a portal, representing visionary leadership.', image: 'Time Travaller_Thumbnail-min.jpg', link: 'print_casestudy_2.html' },
+        { description: '<b>Land Rover:</b> Over 15% of customers upgraded warranties via targeted email and leaflet campaign.', image: 'JLR Cover.jpg', link: 'campaign_case-study2.html' },
+        { description: '<b>Charged:</b> Launch campaign for Coca-Cola Charged energy drink with bold branding and promotions.', image: 'Charged_Thumbnail.jpg', link: 'campaign_case-study3.html'},
         { description: '<b>LMD:</b> Hands assembling gears, symbolizing <br> 30 years of unity.', image: '30 years of LMD-min.jpg', link: 'print_casestudy_1.html' },
-        { description: '<b>Book For You:</b> Professional Logo and Brand Guidelines Development for "Book for you" Visual Identity.', image: 'Book for you Mood Board 1-08-min.jpg', link: 'case-study3.html' },
+        { description: '<b>Inqube:</b> Bring It campaign, recruiting bold talent for sustainable apparel innovation.', image: 'Inqube mood board-02-min.jpg', link: 'campaign_case-study1.html' },
         { description: '<b>LMD:</b> Employees collaborating, illustrating a dynamic workspace culture.', image: 'LMD_GPTW_Thumbnail-min.jpg', link: 'print_casestudy_4.html' },
+        { description: '<b>Bela Beauty College:</b>Transforming Online Presence Together', image: 'Belabeauty_01.jpg', link: 'Digital_case-study3.html' },
+        { description: '<b>Inqube:</b> Futuristic figure entering a portal, representing visionary leadership.', image: 'Time Travaller_Thumbnail-min.jpg', link: 'print_casestudy_2.html' },
     ],
     'brand-identity': [
         { description: '<b>Christianos Pizza:</b> Italian tradition and wood-fired essence in bold design', image: 'Christiano_thumb.jpg', link: 'case-study1.html' },
         { description: '<b>Pramila Jewellers:</b> Elegant branding for luxury custom gold and diamond jewellers.', image: 'Pramila Jewellers Mood Board-08-min.jpg', link: 'case-study2.html' },
         { description: '<b>Book For You:</b> Professional Logo and Brand Guidelines Development for "Book for you" Visual Identity.', image: 'Book for you Mood Board 1-08-min.jpg', link: 'case-study3.html' },
+        { description: '<b>Logofolio 2020 - 2022:</b> Brand Stories in Design', image: 'Logofolio cover-03-min.jpg', link: 'case-study4.html' },
     ],
     'print': [
         { description: '<b>LMD:</b> Hands assembling gears, symbolizing <br> 30 years of unity.', image: '30 years of LMD-min.jpg', link: 'print_casestudy_1.html' },
@@ -22,11 +25,9 @@ const projectTemplates = {
         { description: '<b>OSC:</b> Illustrative Basketball Court Banner - Home of the Geckos', image: 'OSC Mood Board-03-min.jpg', link: 'print_casestudy_6.html' }
     ],
     'campaigns': [
-        { description: 'Campaign for a sustainable fashion brand.', image: 'project1.jpg', link: 'case-study1.html' },
-        { description: 'Digital campaign for a fintech app.', image: 'project2.jpg', link: 'case-study2.html' },
-        { description: 'Social media campaign for an NGO.', image: 'project3.jpg', link: 'case-study3.html' },
-        { description: 'Integrated ad campaign for a tech product.', image: 'project4.jpg', link: 'case-study4.html' },
-        { description: 'Event-based marketing campaign for a festival.', image: 'project5.jpg', link: 'case-study5.html' }
+        { description: '<b>Inqube:</b> Bring It campaign, recruiting bold talent for sustainable apparel innovation.', image: 'Inqube mood board-02-min.jpg', link: 'campaign_case-study1.html' },
+        { description: '<b>Land Rover:</b> Over 15% of customers upgraded warranties via targeted email and leaflet campaign.', image: 'JLR Cover.jpg', link: 'campaign_case-study2.html' },
+        { description: '<b>Charged:</b> Launch campaign for Coca-Cola Charged energy drink with bold branding and promotions.', image: 'Charged_Thumbnail.jpg', link: 'campaign_case-study3.html' }
     ],
     'events': [
         { description: 'Event branding for a tech conference.', image: 'project1.jpg', link: 'case-study1.html' },
