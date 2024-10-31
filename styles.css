@@ -88,6 +88,7 @@ a {
 
 /* General Hero Section Styling */
 .hero-section {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,11 +98,14 @@ a {
 }
 
 .intro-text {
+    position: relative;
+    z-index: 2; /* Brings text in front of the image */
     display: flex; /* Display flex to keep all segments in a single line */
     gap: 15px; /* Adjusted space between segments */
     align-items: center; /* Align vertically to center */
     color: #333;
     flex-wrap: nowrap; /* Prevents wrapping on smaller screens */
+    white-space: nowrap; /* Prevents line break */
 }
 
 /* Styling for "Hi there!" */
@@ -113,7 +117,7 @@ a {
 /* Styling for "I'm" */
 .intro {
     font-family: 'BetterGrade-519DV.ttf', cursive;
-    font-size: 9rem; /* Large font size for "I'm" */
+    font-size: clamp(3rem, 8vw, 9rem); /* Scales proportionately between 3rem and 9rem */
     color: #555;
     text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
     font-weight: 300;
@@ -122,7 +126,7 @@ a {
 /* Styling for "Hari" */
 .name {
     font-family: 'BetterGrade-519DV.ttf', cursive;
-    font-size: 13rem;
+    font-size: clamp(5rem, 10vw, 20rem); /* Scales proportionately between 5rem and 13rem */
     color: #555;
     text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
     font-weight: 300;
@@ -170,6 +174,7 @@ a {
 
 /* Hero Image */
 .hero-image-container {
+    z-index: 1; /* Sends image to the back */
     position: relative;
     max-width: 40%;
 }
