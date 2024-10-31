@@ -126,7 +126,7 @@ a {
 /* Styling for "Hari" */
 .name {
     font-family: 'BetterGrade-519DV.ttf', cursive;
-    font-size: clamp(5rem, 10vw, 20rem); /* Scales proportionately between 5rem and 13rem */
+    font-size: clamp(5rem, 10vw, 15rem); /* Scales proportionately between 5rem and 13rem */
     color: #555;
     text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
     font-weight: 300;
@@ -216,6 +216,7 @@ a {
 /* Responsive Adjustments for Mobile Screens */
 @media (max-width: 767px) {
     .hero-section {
+        position: relative;
         padding: 20px 5vw;
         display: flex;
         align-items: center;
@@ -233,6 +234,8 @@ a {
     }
 
     .intro-text {
+        position: relative;
+        z-index: 2; /* Brings text in front of the image */
         display: flex;
         flex-direction: column;
         align-items: flex-start; /* Left-align each text segment */
@@ -264,6 +267,8 @@ a {
     .hero-image-container {
         max-width: 40%; /* Make the image larger */
         transform: translateX(-85px); /* Shift image left */
+        position: relative;
+        z-index: 1; /* Sends image to the back */
     }
 
     .hero-image {
