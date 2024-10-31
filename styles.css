@@ -111,7 +111,7 @@ a {
 
 /* Styling for "I'm" */
 .intro {
-    font-family: 'Better Grade', cursive;
+    font-family: 'BetterGrade-519DV.ttf', cursive;
     font-size: 9rem; /* Large font size for "I'm" */
     color: #555;
     text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
@@ -120,7 +120,7 @@ a {
 
 /* Styling for "Hari" */
 .name {
-    font-family: 'Better Grade', cursive;
+    font-family: 'BetterGrade-519DV.ttf', cursive;
     font-size: 13rem;
     color: #555;
     text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
@@ -129,7 +129,7 @@ a {
 
 /* Importing Better Grade Font Locally */
 @font-face {
-    font-family: 'Better Grade';
+    font-family: 'BetterGrade-519DV.ttf';
     src: url('BetterGrade-519DV.ttf') format('truetype');
 }
 
@@ -695,6 +695,7 @@ nav a.active {
 .contact-text {
     font-size: 1rem;
     color: #333;
+    justify-content: center;
     text-align: center; /* Center align text on desktop */
     max-width: 800px;
     margin-bottom: 20px;
