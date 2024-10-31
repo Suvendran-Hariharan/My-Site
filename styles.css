@@ -130,7 +130,7 @@ a {
 /* Importing Better Grade Font Locally */
 @font-face {
     font-family: 'Better Grade';
-    src: url('BetterGrade.ttf') format('truetype');
+    src: url('BetterGrade-519DV.ttf') format('truetype');
 }
 
 .hero-content {
