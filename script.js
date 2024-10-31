@@ -104,47 +104,42 @@ window.onload = function() {
     handleAlert(); // Handle the display of the sticky alert on mobile
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+// Event handling for Read More functionality
+document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM fully loaded and parsed");
     const paragraphs = document.querySelectorAll('.content-section p');
 
     paragraphs.forEach(paragraph => {
-        console.log("Processing paragraph:", paragraph.innerText);
         const originalText = paragraph.innerText;
-        const maxVisibleCharacters = 150; // Set character limit for truncation
+        const maxVisibleCharacters = 150;
 
         if (originalText.length > maxVisibleCharacters) {
             const truncatedText = originalText.substring(0, maxVisibleCharacters) + '...';
-            paragraph.innerText = truncatedText;
+            paragraph.innerHTML = truncatedText;
 
             const readMoreLink = document.createElement('span');
             readMoreLink.classList.add('read-more-link');
             readMoreLink.innerText = ' Read More';
-
             paragraph.appendChild(readMoreLink);
 
-            // Function to toggle text visibility
             function toggleText() {
                 if (paragraph.classList.contains('expanded')) {
-                    paragraph.innerText = truncatedText;
+                    paragraph.innerHTML = truncatedText;
                     paragraph.appendChild(readMoreLink);
                     readMoreLink.innerText = ' Read More';
                     paragraph.classList.remove('expanded');
                 } else {
-                    paragraph.innerText = originalText;
+                    paragraph.innerHTML = originalText;
                     paragraph.appendChild(readMoreLink);
                     readMoreLink.innerText = ' Show Less';
                     paragraph.classList.add('expanded');
                 }
             }
 
-            // Add event listeners for click and touchstart
-            readMoreLink.addEventListener('click', toggleText);
-            readMoreLink.addEventListener('touchstart', toggleText); // For touch devices
+            readMoreLink.addEventListener('pointerdown', toggleText); // pointerdown works for both click and touch
         }
     });
 });
-
 
 
 // Function to handle the sticky alert display based on screen size

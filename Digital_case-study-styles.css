@@ -21,20 +21,20 @@ html, body {
 /* Header Styles */
 .header {
     text-align: center;
-    padding: 20px 5vw;
+    padding: 0px 1vw; /* Reduce padding */
     background-color: #ffffff;
-    max-width: 70%;
-    margin: 0 auto;
+    max-width: 70%; /* Align the header text width to image */
+    margin: 0 auto; /* Center the header content */
 }
 
 .header h1 {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Reduced font size for 'Brand Identity' */
     margin-bottom: 10px;
     color: #777;
 }
 
 .header h2 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Slightly reduce the size for subtitle */
     margin-bottom: 20px;
     color: #333;
 }
@@ -42,6 +42,35 @@ html, body {
 .header p {
     font-size: 1rem;
     color: #555;
+}
+
+@media (max-width: 767px) {
+
+    .header {
+        text-align: center;
+        padding: 0px 1vw; /* Reduce padding */
+        background-color: #ffffff;
+        max-width: 90%; /* Align the header text width to image */
+        margin: 5px auto; /* Center the header content */
+    }
+    header h1 {
+        font-size: 0.5rem; /* Reduced font size for 'Brand Identity' */
+        margin-bottom: 10px;
+        color: #ababab;
+    }
+
+    .header h2 {
+        font-size: 1.6rem; /* Slightly reduce the size for subtitle */
+        line-height: 1.8rem;
+        margin-bottom: 10px;
+        color: #333;
+    }
+    
+    .header p {
+        padding: 0 1vw; /* Adds left and right padding */
+        text-align: center; /* Optional: makes text easier to read on mobile */
+        line-height: 1.5rem;
+    }
 }
 
 /* Gallery Styles */
@@ -173,10 +202,13 @@ html, body {
 .content-section p {
     font-size: 1rem;
     color: #555;
-    max-height: 4.5em;
     overflow: hidden;
     position: relative;
     transition: max-height 0.3s ease;
+}
+
+.content-section p.collapsed {
+    max-height: 4.5em; /* Only apply max-height when collapsed */
 }
 
 .content-section p.expanded {

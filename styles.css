@@ -75,7 +75,17 @@ a {
     }
 }
 
-/* Hero Section */
+
+
+
+
+
+
+
+
+
+
+/* General Hero Section Styling */
 .hero-section {
     display: flex;
     justify-content: center;
@@ -83,6 +93,44 @@ a {
     padding: 60px 5vw;
     background-color: #fff;
     min-height: 100vh;
+}
+
+.intro-text {
+    display: flex; /* Display flex to keep all segments in a single line */
+    gap: 15px; /* Adjusted space between segments */
+    align-items: center; /* Align vertically to center */
+    color: #333;
+    flex-wrap: nowrap; /* Prevents wrapping on smaller screens */
+}
+
+/* Styling for "Hi there!" */
+.greeting {
+    font-size: 1.5rem; /* Smaller font size for "Hi there!" */
+    font-weight: 400;
+}
+
+/* Styling for "I'm" */
+.intro {
+    font-family: 'Better Grade', cursive;
+    font-size: 9rem; /* Large font size for "I'm" */
+    color: #555;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+    font-weight: 300;
+}
+
+/* Styling for "Hari" */
+.name {
+    font-family: 'Better Grade', cursive;
+    font-size: 13rem;
+    color: #555;
+    text-shadow: 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+    font-weight: 300;
+}
+
+/* Importing Better Grade Font Locally */
+@font-face {
+    font-family: 'Better Grade';
+    src: url('BetterGrade.ttf') format('truetype');
 }
 
 .hero-content {
@@ -147,48 +195,98 @@ a {
     opacity: 0;
 }
 
-/* Mobile-specific styles for the hero section */
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Adjustments for Mobile Screens */
 @media (max-width: 767px) {
     .hero-section {
-        padding: 30px 5vw;
+        padding: 20px 5vw;
+        display: flex;
+        align-items: center;
     }
 
     .hero-content {
-        flex-direction: column-reverse;  /* Stack text below the image */
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-    }
-
-    .hero-image-container {
-        max-width: 70%; /* Image takes 70% width */
-        margin-bottom: 20px; /* Add space below the image */
+        flex-direction: row; /* Side-by-side layout */
+        align-items: flex-start; /* Align items to the top */
+        gap: 0; /* Remove gap between text and image */
     }
 
     .hero-text {
-        max-width: 100%;
-        margin-top: 10px;  /* Add space above the text */
+        max-width: 55%; /* Slightly wider text block */
+        text-align: left; /* Ensure all text is left-aligned */
     }
 
-    .hero-text h1 {
-        font-size: 2.2rem; /* Adjust font size for mobile */
-        margin-bottom: 10px;
+    .intro-text {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Left-align each text segment */
+        gap: 5px; /* Reduce gap between segments */
+        margin-bottom: -10px; /* Bring "Hi there!" closer to main text */
+        text-align: left; /* Additional left alignment */
+    }
+
+    .greeting {
+        font-size: 1rem;
+        margin-bottom: -10px; /* Move "Hi there!" closer to "I'm" */
+    }
+
+    .intro {
+        font-size: 6rem; /* Adjusted font size for "I'm" */
+        line-height: 1; /* Tighten spacing */
+    }
+
+    .name {
+        font-size: 7rem; /* Adjusted font size for "Hari" */
+        line-height: 1; /* Tighten spacing */
     }
 
     .hero-text p {
-        font-size: 1.1rem;
-        margin-bottom: 15px;
+        font-size: 1rem; /* Smaller paragraph font */
+        text-align: left; /* Ensure paragraph text is also left-aligned */
     }
 
-    .portfolio-text {
-        font-size: 1rem;
-        margin-top: 20px;
+    .hero-image-container {
+        max-width: 40%; /* Make the image larger */
+        transform: translateX(-85px); /* Shift image left */
+    }
+
+    .hero-image {
+        width: 200%; /* Ensure image width fits the container */
+        height: auto;
     }
 
     .long-text {
-        display: none;
+        display: none; /* Hide extended text */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Bottom Sticky Navigation Bar */
 header {
@@ -247,6 +345,12 @@ nav a.active {
     }
 }
 
+
+
+
+
+
+
 /* Filter Section */
 .filter-work-section {
     min-height: 100vh;
@@ -295,8 +399,26 @@ nav a.active {
         z-index: 100;
         padding: 15px 0;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
     }
 }
+
+@media (max-width: 767px) {
+    .filter-section {
+        position: sticky;
+        margin-top: -100px;
+        width: 100%;
+        left: 0;
+        background-color: white;
+        z-index: 100;
+        padding: 15px 0;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    }
+}
+
+
+
 
 /* Project Grid */
 .project-grid {
@@ -351,8 +473,16 @@ nav a.active {
     /* Project Grid Padding for Mobile */
     .project-grid {
         padding: 5vw;
+        gap: 30px;
     }
 }
+
+
+
+
+
+
+
 
 /* About Section */
 .about-section {
@@ -482,7 +612,18 @@ nav a.active {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
+
+    .about-section {
+        padding: 50px 5vw;
+        margin-top: 60px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column; /* Stack the "About" heading on top */
+        align-items: center; /* Center items for larger screens */
+        background-color: #fff;
+    }
+    
     .about-content {
         display: flex;
         flex-direction: column; /* Stack the sections vertically */
@@ -506,55 +647,84 @@ nav a.active {
         font-size: 0.95rem;
         line-height: 1.4;
     }
+
+    .about-left h3 {
+        font-size: 1rem;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        color: gray;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Contact Section */
 .contact-section {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 5vw; /* Keep padding as 5vw */
+    align-items: center; /* Center align everything within the section on desktop */
+    padding: 50px 5vw;
     min-height: 100vh;
-    text-align: center; /* Center align by default */
+    gap: 15px;
 }
 
 /* Contact Heading */
+.contact-section h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Contact Text */
 .contact-text {
     font-size: 1rem;
-    margin-bottom: 20px;
     color: #333;
-    text-align: left; /* Align left for larger screens */
-    width: 100%;
-    max-width: 1000px; /* Limit the width on desktop */
-    margin-left: 5vw; /* Align with the About text */
+    text-align: center; /* Center align text on desktop */
+    max-width: 800px;
+    margin-bottom: 20px;
 }
 
 /* Email Section */
 .email {
-    font-size: clamp(1.5rem, 4vw, 2.5rem); /* Responsive scaling */
+    font-size: clamp(2rem, 4vw, 3rem); /* Responsive scaling */
     font-weight: bold;
-    text-align: center; /* Center align */
-    width: calc(100% - 10vw); /* Make it fit within the screen width */
+    text-align: center; /* Center align email on desktop */
+    max-width: 80%; /* Limit width for readability */
     white-space: normal; /* Allow wrapping if needed */
     line-height: 1.5;
-    margin: 20px 0;
+    margin-top: 20px;
 }
 
 /* Social Links */
 .social-links {
     display: flex;
-    justify-content: center; /* Center align for desktop */
+    justify-content: center; /* Center align icons on desktop */
     align-items: center;
-    gap: clamp(15px, 2vw, 30px); /* Responsive gap */
+    gap: 15px; /* Space between icons */
     margin-top: 20px;
-    flex-wrap: nowrap; /* Keep icons in one row */
+    flex-wrap: nowrap; /* Keep icons in a single line */
 }
 
 /* Social Icon */
 .social-icon {
-    width: clamp(35px, 6vw, 60px); /* Responsive scaling */
-    height: auto; /* Maintain aspect ratio */
+    width: 35px; /* Icon size */
+    height: auto;
     transition: transform 0.3s ease;
 }
 
@@ -564,48 +734,65 @@ nav a.active {
 
 /* Desktop-Specific Styles */
 @media (min-width: 1024px) {
-    .contact-text {
-        text-align: left; /* Align left on desktop */
-        margin-left: 5vw; /* Align with About text */
+    .contact-section {
+        align-items: center; /* Ensure everything is centered on desktop */
     }
     .email {
-        font-size: 2.5rem; /* Larger font for desktops */
-        width: calc(100% - 10vw); /* Ensure it fits within the screen */
-        text-align: center;
-    }
-    .social-links {
-        justify-content: center; /* Center align on desktop */
+        width: 100%; /* Fit to full width */
+        text-align: center; /* Center align email */
     }
 }
 
 /* Mobile-Specific Styles */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .contact-section {
-        align-items: flex-start; /* Align items to the left on mobile */
+        align-items: flex-start; /* Align content to the left on mobile */
+        padding-left: 5vw;
     }
 
-    .contact-text {
-        text-align: left;
-        padding-left: 10px; /* Add padding for better readability */
+    .contact-section h2,
+    .contact-text,
+    .email {
+        text-align: left; /* Left-align on mobile */
     }
 
     .email {
-        font-size: 1.2rem; /* Ensure the email fits the mobile screen */
-        text-align: left;
-        width: 100%; /* Full width on mobile */
-        padding-left: 10px;
+        width: 100%; /* Fit the entire width on mobile */
+        padding-left: 0;
     }
 
     .social-links {
-        justify-content: flex-start; /* Align to the left on mobile */
-        flex-wrap: nowrap; /* Keep in a single row */
-        gap: 10px; /* Smaller gap for mobile */
+        justify-content: flex-start; /* Align icons to the left on mobile */
+        gap: 10px; /* Smaller gap between icons on mobile */
+        width: 100%;
     }
 
     .social-icon {
         width: 30px; /* Smaller icon size for mobile */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Footer Section */
 .footer-section {

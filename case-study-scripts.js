@@ -1,28 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const paragraphs = document.querySelectorAll('.content-section p');
+    const paragraphs = document.querySelectorAll('.expandable-text');
 
     paragraphs.forEach(paragraph => {
-        const originalText = paragraph.innerText;
+        const fullText = paragraph.innerHTML;
         const maxVisibleCharacters = 150;
+        const truncatedText = fullText.substring(0, maxVisibleCharacters) + '... ';
 
-        if (originalText.length > maxVisibleCharacters) {
-            const truncatedText = originalText.substring(0, maxVisibleCharacters) + '...';
-            paragraph.innerHTML = truncatedText;
+        // Initialize paragraph with truncated text and Read More link
+        paragraph.innerHTML = `${truncatedText}<span class="read-more-link" style="color: blue; cursor: pointer;">Read More</span>`;
 
-            // Create 'Read More' link
-            const readMoreLink = document.createElement('span');
-            readMoreLink.classList.add('read-more-link');
-            readMoreLink.innerText = ' Read More';
-            paragraph.appendChild(readMoreLink);
+        const readMoreLink = paragraph.querySelector('.read-more-link');
 
-            // Toggle CSS class only for visibility
-            readMoreLink.addEventListener('click', () => {
-                paragraph.classList.toggle('expanded');
-                readMoreLink.innerText = paragraph.classList.contains('expanded') ? ' Show Less' : ' Read More';
-            });
-        }
+        // Function to toggle between truncated and full text
+        readMoreLink.addEventListener('click', function toggleText() {
+            if (paragraph.classList.contains('expanded')) {
+                paragraph.innerHTML = `${truncatedText}<span class="read-more-link" style="color: blue; cursor: pointer;">Read More</span>`;
+            } else {
+                paragraph.innerHTML = `${fullText}<span class="read-more-link" style="color: blue; cursor: pointer;">Show Less</span>`;
+            }
+
+            paragraph.classList.toggle('expanded');
+            paragraph.querySelector('.read-more-link').addEventListener('click', toggleText);
+        });
     });
 });
+
+
 
 
 // Function to auto-scroll to the 'Work' section if the URL contains 'scrollTo=work'

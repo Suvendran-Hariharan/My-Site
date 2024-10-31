@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hariharan Suvendran - Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles1.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -20,7 +20,21 @@
         <div class="hero-content">
             <!-- Left: Hero Text -->
             <div class="hero-text">
-                <h1>Hi there! I'm Hari</h1>
+                <!--  <h1>Hi there! I'm Hari</h1> 
+                <h1 class="intro-text">
+                    <span class="segment greeting">Hi there!</span>
+                    <span class="segment intro">I'm</span>
+                    <span class="segment name">Hari</span>
+                </h1> -->
+
+                <h1 class="intro-text">
+                    <span class="greeting">Hi there!</span> <!-- Separate line -->
+                    <div class="intro-line"> <!-- New wrapper for "I'm Hari" -->
+                        <span class="intro">I'm</span>
+                        <span class="name">Hari</span>
+                    </div>
+                </h1>
+
                 <p>a passionate Creative Designer with over 5 years of experience turning complex ideas into impactful visuals. 
                     <span class="long-text">Whether it’s leading cross-functional teams or developing creative concepts. Let’s build something unforgettable together!</span>
                 </p>
@@ -101,7 +115,7 @@
 
             <!-- Description Section (Right) -->
             <div class="about-right">
-                <p>"For me, creativity doesn’t follow a set formula—it’s that sudden spark, the 'Aha!' moment when everything clicks into place."</p> <br>
+                <p>"For me, creativity isn’t about following a set formula—it’s that sudden spark, the 'Aha!' moment when an idea finally clicks into a solution."</p> <br>
                 <p>That’s where the real work begins: turning that spark into a design where content, color, and creativity align to form a cohesive grid. I’ve worked with brands like <span class="medium-bold"> Coca-Cola, Red Bull, Jaguar Land Rover, and ITC Hotels</span> to turn ideas into visuals that do more than catch the eye—they tell a story.</p>
                 <p>Whether I’m leading a team or perfecting the kerning, my goal is to ensure design doesn’t just look good—it communicates. It’s about making every detail count, so let’s roll up our sleeves, dive into the layers, and bring your vision to life in a way that truly resonates.</p>
             </div>
@@ -110,23 +124,21 @@
 
     <!-- Contact Section -->
     <section class="contact-section" id="contact-section">
-        <h2>Contact</h2>
-        <div class="contact-content">
-            <p class="contact-text">Ready to transform your ideas into stunning realities?</p>
-            <div class="email">suvendranhariharan@gmail.com</div>
-            <div class="social-links">
-                <a href="https://www.behance.net/hariharan_" target="_blank">
-                    <img src="Behance.svg" alt="Behance" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com/hariharan.design/" target="_blank">
-                    <img src="Instagram.svg" alt="Instagram" class="social-icon">
-                </a>
-                <a href="https://www.linkedin.com/in/hariharan-suvendran/" target="_blank">
-                    <img src="Linked In.svg" alt="LinkedIn" class="social-icon">
-                </a>
-            </div>
-        </div>
-    </section>
+    <h2>Contact</h2>
+    <p class="contact-text">Ready to transform your ideas into stunning realities?</p>
+    <div class="email">suvendranhariharan@gmail.com</div>
+    <div class="social-links">
+        <a href="https://www.behance.net/hariharan_" target="_blank">
+            <img src="Behance.svg" alt="Behance" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com/hariharan.design/" target="_blank">
+            <img src="Instagram.svg" alt="Instagram" class="social-icon">
+        </a>
+        <a href="https://www.linkedin.com/in/hariharan-suvendran/" target="_blank">
+            <img src="LinkedIn.svg" alt="LinkedIn" class="social-icon">
+        </a>
+    </div>
+</section>
 
 
     <!-- Footer Section -->
@@ -154,6 +166,6 @@
     </script>
 
     <!-- Optional JavaScript -->
-    <script src="script.js"></script>
+    <script src="script_1.js"></script>
 </body>
 </html>
